@@ -4,11 +4,11 @@
 
 ## スタイルガイドの技術仕様
 
-[こちら](TODO:要差し替え)を参照してください。
+[こちら](https://github.com/BRX-YTakahashi/StyleGuideTemplate/blob/master/DOCS/technicalSpecifications.md)を参照してください。
 
 ## スタイルガイドのデザインガイドライン
 
-[こちら](TODO:要差し替え)を参照してください。
+[こちら](https://github.com/BRX-YTakahashi/StyleGuideTemplate/blob/master/DOCS/designGuideline.md)を参照してください。
 
 ## 使い方
 
