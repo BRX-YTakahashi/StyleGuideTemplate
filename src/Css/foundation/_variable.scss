@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+// /* ===============================================
+//   * SCSS Variables *
+// =============================================== */
+// * Media query *
+// for default value
+$breakpoints: (
+  "sm": "(min-width: 560px)",
+  "md": "(min-width: 768px)",
+  "lg": "(min-width: 980px)",
+  "xl": "(min-width: 1200px)",
+  "xxl": "(min-width: 1400px)",
+) !default;
+
+// for min-width
+$breakpoints-up: (
+  "sm": "(min-width: 560px)",
+  "md": "(min-width: 768px)",
+  "lg": "(min-width: 980px)",
+  "xl": "(min-width: 1200px)",
+  "xxl": "(min-width: 1400px)",
+) !default;
+
+// for max-width
+$breakpoints-down: (
+  "sm": "(max-width: 559px)",
+  "md": "(max-width: 767px)",
+  "lg": "(max-width: 979px)",
+  "xl": "(max-width: 1199px)",
+  "xxl": "(max-width: 1399px)",
+) !default;
+
+// * Device Screen Width *
+$screenSize_Medium: 768px;
+$screenSize_XLarge: 1200px;
+
+
+// * bg-color *
+$base-bg: #fff;
+
+// * font-color *
+$base-color: #000;
+
+// * font-family *
+
+// $base-ff: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "Yu Gothic", "Open Sans", "メイリオ", sans-serif;
+$jp-ff: "M PLUS 1p";
+$en-ff: "Roboto";
+$code-ff: "IBM Plex Mono";
+// $base-ff: $en-ff, $jp-ff, sans-serif;
+$base-ff: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+// $code-ff: $code-ff, $jp-ff, sans-serif;
+$code-ff: $code-ff, sans-serif;
+
+
+@media #{map-get($breakpoints-down, lg)} {
+  // contents spacer
+  $spacer_vertical-small: 2.5vw;
+  $spacer_vertical-medium: 5vw;
+  $spacer_vertical-large: 7.5vw;
+  // $spacer_horizontal-small: 2.5vw;
+  // $spacer_horizontal-medium: 5vw;
+  // $spacer_horizontal-large: 7.5vw;
+}
+
+@media #{map-get($breakpoints-up, lg)} {
+  // contents spacer
+  $spacer_vertical-small: 2.5vh;
+  $spacer_vertical-medium: 5vh;
+  $spacer_vertical-large: 7.5vh;
+  // $spacer_horizontal-small: 2.5vh;
+  // $spacer_horizontal-medium: 5vh;
+  // $spacer_horizontal-large: 7.5vh;
+}

@@ -1,0 +1,65 @@
+@charset "UTF-8";
+@use "../../../Css/foundation/function" as function;
+@use "../../../Css/foundation/mixin" as mixin;
+@use "../../../Css/foundation/variable" as variable;
+
+
+/* ===============================================
+  * section-style--buttons *
+=============================================== */
+@include mixin.mqP(lg) {
+  /* ===============================================
+    * section-style--buttons *
+  =============================================== */
+}
+@include mixin.mq(lg) {
+  /* ===============================================
+    * section-style--buttons *
+  =============================================== */
+}
+
+
+@include mixin.mq(lg) {
+  .section-style--buttons {
+    .annotation {
+      display: inline;
+    }
+
+    .button__list .title-txt {
+      width: 100%;
+    }
+
+    .button__list-item {
+      width: 90%;
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: 0;
+      padding-left: 2rem;
+
+      &--1 {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
+    .button__variation__container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .button__variation {
+      width: 40%;
+    }
+
+    .button-description-txt {
+      text-align: left;
+    }
+
+    .button .annotation {
+      display: block;
+      margin-top: 1rem;
+    }
+
+  }
+}

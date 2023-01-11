@@ -1,0 +1,35 @@
+@charset "UTF-8";
+@use "../../../Css/foundation/function" as function;
+@use "../../../Css/foundation/mixin" as mixin;
+@use "../../../Css/foundation/variable" as variable;
+
+
+/* ===============================================
+  * section-style--codingrule *
+=============================================== */
+@include mixin.mqP(lg) {
+  /* ===============================================
+    * section-style--codingrule *
+  =============================================== */
+}
+@include mixin.mq(lg) {
+  /* ===============================================
+    * section-style--codingrule *
+  =============================================== */
+}
+
+
+/*
+ * section-style--codingrule
+ */
+.section-style--codingrule .codingrule-detail__container {
+  padding-right: 3%;
+  padding-left: 3%;
+}
+
+.section-style--codingrule .codingrule-detail__list {
+  margin-top: 2%;
+  padding-left: 2%;
+  list-style: disc;
+  list-style-position: inside;
+}

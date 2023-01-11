@@ -1,0 +1,32 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite && vite --host --mode development",
+    "build": "tsc && vite build",
+    "preview": "vite preview --host"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "autoprefixer": "^10.4.11",
+    "css-declaration-sorter": "^6.3.1",
+    "postcss": "^8.4.16",
+    "postcss-sort-media-queries": "^4.3.0",
+    "sass": "^1.54.9",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0",
+    "vite-plugin-handlebars": "^1.6.0",
+    "vite-plugin-markdoc": "^0.1.4"
+  },
+  "browserslist": [
+    "last 2 major versions",
+    "not ie >= 11",
+    "not dead"
+  ],
+  "dependencies": {
+    "@ryusei/light": "^1.2.0",
+    "vite-plugin-minify": "^1.5.2"
+  }
+}

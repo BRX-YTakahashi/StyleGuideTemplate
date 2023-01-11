@@ -1,0 +1,115 @@
+<div class="main-content" data-category="rule">
+  <!-- コーディングルール -->
+  <section class="section-style section-style--codingrule js-intersectTarget" id="codingRule" data-indexname="コーディングルール">
+    <h2 class="title-txt">コーディングルール</h2>
+
+    <div class="markdown-body material__button--animate" data-doc-name="コーディングルール">
+      <div class="markdown-output" data-doc-detail="codingRule"></div>
+      <button type="button" class="markdown__modal-trigger d-md-none">
+        <p class="markdown__modal-trigger-txt"><span class="js-placeholderText"></span>を読む</p>
+      </button>
+    </div>
+  </section>
+
+
+  <!-- レスポンシブユーティリティ -->
+  <section class="section-style section-style--responsive js-intersectTarget" id="responsiveUtility" data-indexname="レスポンシブユーティリティ">
+    <h2 class="title-txt">レスポンシブユーティリティ</h2>
+
+    <p class="desc-txt">各デバイスにおける表示/非表示を制御するためのクラスです。</p>
+
+    <p class="desc-txt">
+      <a href="https://getbootstrap.com/docs/5.2/utilities/display/" target="_blank" class="link-txt">新たな方式</a>に変更する予定のため、↓の方式は撤廃予定です。
+    </p>
+
+    <div class="responsive-utility" style="filter:blur(2px) grayscale(1);pointer-events:none">
+      <div class="responsive-utility--howtouse">
+        <figure class="img__wrapper">
+          <img src="imgs/responsiveUtility.png" alt="responsive utilityの説明" loading="lazy">
+
+          <figcaption>
+            詳細は <a href="https://getbootstrap.com/2.3.2/scaffolding.html#responsive" target="_blank" class="link-txt">こちら</a>
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="responsive-utility--caution">
+        <span class="code-style code-style--inline">display: none</span> と<span class="code-style code-style--inline">block</span>で切り替えを行っており、<span class="code-style code-style--inline">!important</span>を使用しています。<br>
+        <span class="code-style code-style--inline">flex</span>等を使用したい場合は<span class="code-style code-style--inline">!important</span>で上書きしてください！<br>
+        <span class="annotation--xs annotation--grey">
+          別デバイスでの表示に影響が出ないよう、メディアクエリで適応される範囲をしっかり絞ってあげる事をオススメします！
+        </span>
+      </p>
+
+      <!-- <ul class="responsive-utility__container">
+        <li class="responsive-utility__list responsive-utility__list--visible">
+          <h4 class="title-txt">visible <span class="annotation--xs annotation--grey">特定のデバイスでだけ【表示する】際に使用</span></h4>
+
+          <ul class="responsive-utility__list-btns">
+            <li class="responsive-utility__list-item visible-phone">SPで表示されます<br>.visible-phone</li>
+            <li class="responsive-utility__list-item visible-tablet">タブレットで表示されます<br>.visible-tablet</li>
+            <li class="responsive-utility__list-item visible-desktop">PCで表示されます<br>.visible-desktop</li>
+          </ul>
+
+          <ul class="code__list">
+            <li class="code__list-item">
+              <span class="code">
+                visible-phone
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"><path fill="currentColor" d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"></path></svg>
+              </span>
+            </li>
+
+            <li class="code__list-item">
+              <span class="code">
+                visible-tablet
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"><path fill="currentColor" d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"></path></svg>
+              </span>
+            </li>
+
+            <li class="code__list-item">
+              <span class="code">
+                visible-desktop
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"><path fill="currentColor" d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"></path></svg>
+              </span>
+            </li>
+          </ul>
+        </li>
+
+        <li class="responsive-utility__list responsive-utility__list--hidden">
+          <h4 class="title-txt">
+            hidden <span class="annotation--xs annotation--grey">特定のデバイスでは【表示しない】際に使用</span>
+          </h4>
+
+          <ul class="responsive-utility__list-btns">
+            <li class="responsive-utility__list-item hidden-phone">SP以外で表示されます<br>.hidden-phone</li>
+            <li class="responsive-utility__list-item hidden-tablet">タブレット以外で表示されます<br>.hidden-tablet</li>
+            <li class="responsive-utility__list-item hidden-desktop">PC以外で表示されます<br>.hidden-desktop</li>
+          </ul>
+
+          <ul class="code__list">
+            <li class="code__list-item">
+              <span class="code">
+                hidden-phone
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"><path fill="currentColor" d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"></path></svg>
+              </span>
+            </li>
+
+            <li class="code__list-item">
+              <span class="code">
+                hidden-tablet
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"><path fill="currentColor" d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"></path></svg>
+              </span>
+            </li>
+
+            <li class="code__list-item">
+              <span class="code">
+                hidden-desktop
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"><path fill="currentColor" d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"></path></svg>
+              </span>
+            </li>
+          </ul>
+        </li>
+      </ul> -->
+    </div>
+  </section>
+</div>

@@ -1,0 +1,184 @@
+@charset "UTF-8";
+
+/* =======================================================================
+
+  Variables.css
+
+======================================================================= */
+
+
+:root {
+
+  /* =======================================================================
+    色
+  ======================================================================= */
+
+  /* ユーティリティー系 */
+  --color-error: #e25858;
+  --color-main: #000;
+  --color-bg-main: #f8f8f8;
+  --color-font: #000;
+  --color-attention: #e25858;
+  --color-primary: #58B8e2;
+  --color-warning: #e25858;
+
+  /* 汎用 */
+  --color-black: #000;
+  --color-white: #fff;
+  --color-red: #e25858;
+  --color-light-red: #ef9a9a;
+  --color-dark-red: #9a0007;
+  --color-green: #055818;
+  --color-light-green: #a5d6a7;
+  --color-dark-green: #004c40;
+  --color-blue: #1976d2;
+  --color-light-blue: #81d4fa;
+  --color-dark-blue: #004ba0;
+  --color-orange: #d67936;
+  --color-yellow: #e5dc09;
+
+  /* グレー */
+  --color-white-grey: #fafafa; /* 薄いグレー */
+  --color-white-smoke: #f8f7f7;
+  --color-silver-white: #efefef;
+  --color-very-light-grey: #e3e3e3;
+  --color-light-grey: #c7c7c7;
+  --color-silver: #bfbcbc; /* グレー */
+  --color-middle-grey: #aaa;
+  --color-grey: #7e7e7e;
+  --color-dark-grey: #7c7b7b; /* 濃いグレー */
+  --color-darker-grey: #707070;
+
+  /* プロジェクト用 */
+  --color-brand-main: #29b6f6;
+  --color-brand-sub1: #0086c3;
+  --color-brand-sub2: #73e8ff;
+
+
+  /* =======================================================================
+    フォントサイズ
+  ======================================================================= */
+
+  /* タイトル */
+  --title-xs: 1.5rem;
+  --title-s: 1.6rem;
+  --title-m: 2rem;
+  --title-l: 2.4rem;
+  --title-xl: 3.2rem;
+
+  /* テキスト */
+  --text-xs: 1rem;
+  --text-s: 1.1rem;
+  --text-m: 1.2rem;
+  --text-l: 1.3rem;
+  --text-xl: 1.4rem;
+  --text-xxl: 1.5rem;
+
+  /* font-weight */
+  --fontweight-s: 100;
+  --fontweight-m: 400;
+  --fontweight-l: 700;
+
+
+  /* =======================================================================
+    フォントファミリー
+  ======================================================================= */
+
+  --yu-gothic: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "Yu Gothic", "Open Sans", "メイリオ", sans-serif;
+  --hiragino-gothic: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Verdana, sans-serif;
+
+
+  /* =======================================================================
+    z-index
+  ======================================================================= */
+
+  --zindex-behind: -10;
+  --zindex-middle: 0;
+  --zindex-front: 10;
+  --zindex-pagetopbtn: 30;
+  --zindex-header: 50;
+  --zindex-header-bg: 30;
+  --zindex-drawer: 90;
+  --zindex-modal: 100;
+
+
+  /* =======================================================================
+    コンテンツ横幅
+  ======================================================================= */
+
+  --container-fluid: 100%;
+  --container-default: 100%;
+  --container-static: 100%;
+
+
+  /* =======================================================================
+    アニメーション関係
+  ======================================================================= */
+
+  --opacity-hover: .6;
+  --transition-default: 350ms ease;/* 一括設定 */
+  --transitionDuration-fast: 150ms;
+  --transitionDuration-default: 350ms;
+  --transitionDuration-slow: 600ms;
+  --transitionTimingFunction-default: ease;
+
+
+  /* =======================================================================
+    角丸
+  ======================================================================= */
+  --borderRadius-small: .5rem;
+  --borderRadius-regular: .8rem;
+  --borderRadius-large: 1rem;
+
+
+  /* =======================================================================
+    Box-shadow
+  ======================================================================= */
+  --elevation-0: none;
+  --elevation-1: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
+  --elevation-2: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20);
+  --elevation-3: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);
+  --elevation-4: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.20);
+  --elevation-6: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.20);
+  --elevation-8: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.20);
+  --elevation-9: 0 9px 12px 1px rgba(0,0,0,0.14), 0 3px 16px 2px rgba(0,0,0,0.12), 0 5px 6px -3px rgba(0,0,0,0.20);
+  --elevation-12: 0 12px 17px 2px rgba(0,0,0,0.14), 0 5px 22px 4px rgba(0,0,0,0.12), 0 7px 8px -4px rgba(0,0,0,0.20);
+  --elevation-16: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.20);
+  --elevation-24: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.20);
+
+}
+
+
+
+@media (min-width: 768px) {
+  :root {
+
+    /* =======================================================================
+      フォントサイズ
+    ======================================================================= */
+
+    /* タイトル */
+    --title-xs: 1.3rem;
+    --title-s: 1.4rem;
+    --title-m: 2rem;
+    --title-l: 2.4rem;
+    --title-xl: 2.6rem;
+
+    /* テキスト */
+    --text-xs: .8rem;
+    --text-s: .9rem;
+    --text-m: 1rem;
+    --text-l: 1.1rem;
+    --text-xl: 1.2rem;
+    --text-xxl: 1.3rem;
+
+
+    /* =======================================================================
+      コンテンツ横幅
+    ======================================================================= */
+
+    --container-default: 114rem;
+    --container-static: 100rem;
+    --container-middle: 80rem;
+  }
+}

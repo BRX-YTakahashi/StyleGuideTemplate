@@ -1,0 +1,181 @@
+@charset "UTF-8";
+@use "../../../Css/foundation/function" as function;
+@use "../../../Css/foundation/mixin" as mixin;
+@use "../../../Css/foundation/variable" as variable;
+
+
+/* ===============================================
+  * document reader *
+=============================================== */
+@include mixin.mqP(lg) {
+  /* ===============================================
+    * document reader *
+  =============================================== */
+}
+@include mixin.mq(lg) {
+  /* ===============================================
+    * document reader *
+  =============================================== */
+}
+
+
+.document-reader {
+  position: fixed;
+  // top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: var(--zindex-modal);
+
+  width: 100%;
+  background-color: var(--color_bg-primary);
+  border-radius: var(--borderRadius-large) var(--borderRadius-large) 0 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  transform: translateY(100%);
+  visibility: hidden;
+  transition-property: height, transform, visibility;
+  transition-duration: var(--transitionDuration-default);
+  transition-timing-function: var(--transitionTimingFunction-default);
+
+  &__close-btn {
+    &-wrapper {
+      &--top {
+        position: sticky;
+        top: 0;
+
+        padding: 2vw;
+        background: var(--color_bg-primary);
+        box-shadow: var(--elevation-2);
+
+        transition-property: box-shadow, transform;
+        transition-delay: 0s;
+        transition-duration: var(--transitionDuration-default);
+        transition-timing-function: var(--transitionTimingFunction-default);
+      }
+
+      &--bottom {
+        position: sticky;
+        bottom: 0;
+        left: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 80%;
+        height: 4rem;
+        margin-right: auto;
+        margin-left: auto;
+        border-radius: var(--borderRadius-regular);
+        box-shadow: var(--elevation-8);
+        overflow: hidden;
+
+        transition-property: transform;
+        transition-delay: 0s;
+        transition-duration: var(--transitionDuration-fast);
+        transition-timing-function: var(--transitionTimingFunction-default);
+
+        @include mixin.theme(dark) {
+          box-shadow: none;
+        }
+      }
+    }
+
+    &--top {
+      @include mixin.flex(0, center, center, 0, 0);
+
+      width: 100%;
+      height: 4vh;
+
+      svg {
+        transform: rotate(90deg);
+
+        // path {
+        //   fill: var(--color_bg-primary);
+        // }
+
+        @include mixin.theme(dark) {
+          path {
+            fill: var(--color_bg-white);
+          }
+        }
+      }
+    }
+
+    &--bottom {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-dark-grey);
+      color: var(--color-white);
+
+      &--innovate {
+        background-image: url(../../imgs/parrot.gif);
+        background-size: 20%;
+        background-position: center;
+        filter: blur(3px);
+        overflow: hidden;
+      }
+    }
+
+    &-txt {
+      position: absolute;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      height: 100%;
+      color: var(--color-white);
+      // border: solid 2px var(--color-white);
+      border-radius: var(--borderRadius-regular);
+      z-index: 2;
+    }
+  }
+
+  &[data-state-modal="active"] {
+    // opacity: 1;
+    transform: translateY(1%);
+    visibility: visible;
+
+    .markdown-body {
+      height: auto;
+      padding-top: 5vh;
+      padding-bottom: 10vh;
+      border: none;
+      border-radius: 0;
+    }
+  }
+
+  &[data-state-reader="shrinked"] {
+    height: 60%;
+
+    .document-reader__close-btn-wrapper--bottom {
+      transform: translateY(8vh);
+    }
+  }
+
+  &[data-state-reader="expanded"] {
+    height: 98%;
+
+    .document-reader__close-btn-wrapper--top {
+      box-shadow: 0 0 0;
+      transition-delay: .5s;
+      transform: translateY(-100%);
+    }
+
+    .document-reader__close-btn-wrapper--bottom {
+      transition-delay: .75s;
+      transition-duration: var(--transitionDuration-slow);
+      transform: translateY(-4vh);
+    }
+  }
+}

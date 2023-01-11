@@ -1,0 +1,109 @@
+@charset "UTF-8";
+@use "../../../Css/foundation/function" as function;
+@use "../../../Css/foundation/mixin" as mixin;
+@use "../../../Css/foundation/variable" as variable;
+
+
+/* ===============================================
+  * section-style--color *
+=============================================== */
+@include mixin.mqP(lg) {
+  /* ===============================================
+    * section-style--color *
+  =============================================== */
+}
+@include mixin.mq(lg) {
+  /* ===============================================
+    * section-style--color *
+  =============================================== */
+}
+
+
+.section-style--color {
+  & > div:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.color-tiles {
+  &--variation {
+    // padding-left: var(--spacer_vertical-xsmall);
+
+    .annotation {
+      display: block;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 var(--spacer_vertical-xsmall);
+
+    @include mixin.mqP(lg) {
+      gap: var(--spacer_vertical-small);
+
+      & > copy-color {
+        width: 100%;
+      }
+    }
+
+    @include mixin.mq(lg) {
+      gap: var(--spacer_vertical-small) calc((100% - (22% * 4)) / 3);
+
+      & > copy-color {
+        width: 22%;
+      }
+    }
+  }
+}
+
+.color-tile {
+  &--colorsample {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    border-radius: var(--borderRadius-small);
+    font-size: 1.5em;
+    font-weight: var(--fontweight-s);
+    letter-spacing: .1em;
+
+    @include mixin.mqP(lg) {
+      line-height: 4.5;
+    }
+
+    @include mixin.mq(lg) {
+      aspect-ratio: 1;
+    }
+  }
+
+  &--colorname {
+    font-size: 1.6rem;
+    font-weight: var(--fontweight-l);
+    letter-spacing: .05em;
+    line-height: 2;
+  }
+}
+
+
+copy-color[error="true"] {
+  pointer-events: none;
+
+  .color-tile--colorsample,
+  .code {
+    border-color: var(--color-attention);
+  }
+
+  .code {
+    color: var(--color-grey);
+
+    svg {
+      visibility: hidden;
+    }
+  }
+}

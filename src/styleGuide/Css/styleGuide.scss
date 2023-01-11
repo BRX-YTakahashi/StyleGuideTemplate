@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+
+/* base style */
+@use "./foundation/base";
+
+/* component */
+@use "./component/index";
+@use "./component/categorytab";
+@use "./component/code";
+@use "./component/toast";
+@use "./component/modal";
+@use "./component/documentReader";
+@use "./component/markdown";
+@use "./component/button";
+@use "./component/colortile";
+
+/* each section's style */
+@use "./page/caution";
+@use "./page/codingrule";
+@use "./page/responsive";
+@use "./page/fontfamily";
+@use "./page/mov";

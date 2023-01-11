@@ -1,0 +1,387 @@
+@charset "UTF-8";
+@use "../../../Css/foundation/function" as function;
+@use "../../../Css/foundation/mixin" as mixin;
+@use "../../../Css/foundation/variable" as variable;
+
+
+/* ===============================================
+  * category-tab *
+=============================================== */
+@include mixin.mqP(lg) {
+  /* ===============================================
+    * category-tab *
+  =============================================== */
+}
+@include mixin.mq(lg) {
+  /* ===============================================
+    * category-tab *
+  =============================================== */
+}
+
+@keyframes categoryTabAnimation {
+  0% {
+    border-radius: 4rem;
+  }
+  99% {
+    border-radius: 4rem;
+  }
+  // 90% {
+  //   border-radius: 50%;
+  //   // transform: translateY(0);
+  // }
+  100% {
+    width: 4vh;
+    border-radius: 50%;
+    // transform: translateY(2vh);
+
+    // @include mixin.theme(light) {
+    //   background-color: var(--color-white);
+    // }
+  }
+}
+@keyframes categoryTabAnimation_reverse {
+  // 0% {
+  //   width: 4vh;
+  //   background-color: var(--color-white);
+  // }
+  // 10% {
+  //   border-radius: 50%;
+  // }
+  // 50% {
+  //   border-radius: 4rem;
+  // }
+  // 100% {
+  //   border-radius: 4rem;
+  // }
+  0% {
+    width: 4vh;
+    border-radius: 50%;
+
+    // @include mixin.theme(light) {
+    //   background-color: var(--color-white);
+    // }
+  }
+  10% {
+    border-radius: 4rem;
+  }
+}
+
+@keyframes moveBottom {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(2vh);
+  }
+}
+
+@keyframes moveBottom_reverse {
+  from {
+    transform: translateY(2vh);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+.category-tab__list {
+  --tab: 4;//タブの個数
+
+  /* position: fixed; */
+  position: sticky;
+  right: 0;
+  left: 0;
+  z-index: var(--zindex-front);
+
+  display: flex;
+
+  width: 80%;
+  max-width: 80rem;
+  margin: auto;
+  padding: .2rem;
+  overflow: hidden;
+  background-color: var(--color-white);
+  box-shadow:  var(--elevation-8);
+
+  transition-property: opacity, transform;
+  transition-duration: var(--transitionDuration-default);
+  transition-timing-function: var(--transitionTimingFunction-default);
+
+  @include mixin.theme(dark) {
+    background: var(--color_bg-moreLighter);
+  }
+
+  @include mixin.mqP(lg) {
+    bottom: 4vh;
+
+    width: 95%;
+    height: 7vh;
+    border-radius: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  @include mixin.mq(lg) {
+    bottom: 5vh;
+
+    width: 80%;
+    height: 4vh;
+    border-radius: 4rem;
+    font-size: 1.4rem;
+  }
+
+  &-item {
+    user-select: none;
+
+    // @include mixin.theme(dark) {
+    //   background: var(--color_bg-moreLighter);
+    // }
+  }
+
+  &-item:not(.category-tab__list-item--expand) {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: calc(100% / var(--tab));
+    border: solid 2px transparent;
+    overflow: hidden;
+    color: var(--color-font);
+    font-weight: var(--fontweight-l);
+    cursor: pointer;
+
+    transition:
+      background var(--transitionDuration-default) var(--transitionTimingFunction-default),
+      border var(--transitionDuration-default) var(--transitionTimingFunction-default),
+      border-radius var(--transitionDuration-default) var(--transitionTimingFunction-default),
+      color var(--transitionDuration-default) var(--transitionTimingFunction-default),
+      filter var(--transitionDuration-default) var(--transitionTimingFunction-default),
+      opacity var(--transitionDuration-default) var(--transitionTimingFunction-default) .5s,
+      transform var(--transitionDuration-default) var(--transitionTimingFunction-default),
+      width var(--transitionDuration-default) var(--transitionTimingFunction-default) 1.5s;
+
+    @include mixin.theme(dark) {
+      color: var(--color-white);
+    }
+
+    @include mixin.mqP(lg) {
+      border-radius: 1.5rem;
+    }
+
+    @include mixin.mq(lg) {
+      border-radius: 4rem;
+    }
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+
+      width: 0;
+      height: 100%;
+
+      transition-property: width;
+      transition-duration: var(--transitionDuration-default);
+      transition-timing-function: var(--transitionTimingFunction-default);
+      will-change: width;
+    }
+
+    &.current {
+      position: relative;
+      z-index: 2;
+
+      &::after {
+        width: 100%;
+      }
+
+      @include mixin.mqP(lg) {
+        &:active {
+          border-color: transparent !important;
+        }
+      }
+
+      @include mixin.mq(lg) {
+        @include mixin.hover {
+          border-color: transparent !important;
+        }
+      }
+    }
+
+    &[data-category="welcome"] {
+      &::after {
+        background: var(--color-category-welcome);
+      }
+
+      @include mixin.mqP(lg) {
+        &:active {
+          border-color: var(--color-category-welcome);
+        }
+      }
+
+      @include mixin.mq(lg) {
+        @include mixin.hover {
+          border-color: var(--color-category-welcome);
+        }
+      }
+
+      &.current {
+        color: var(--color-white);
+      }
+    }
+
+    &[data-category="rule"] {
+      &::after {
+        background: var(--color-category-rule);
+      }
+
+      @include mixin.mqP(lg) {
+        &:active {
+          border-color: var(--color-category-rule);
+        }
+      }
+
+      @include mixin.mq(lg) {
+        @include mixin.hover {
+          border-color: var(--color-category-rule);
+        }
+      }
+
+      &.current {
+        color: var(--color-white);
+      }
+    }
+
+    &[data-category="design"] {
+      &::after {
+        background: var(--color-category-design);
+      }
+
+      @include mixin.mqP(lg) {
+        &:active {
+          border-color: var(--color-category-design);
+        }
+      }
+
+      @include mixin.mq(lg) {
+        @include mixin.hover {
+          border-color: var(--color-category-design);
+        }
+      }
+
+      &.current {
+        color: var(--color-white);
+      }
+    }
+
+    &[data-category="code"] {
+      &::after {
+        background: var(--color-category-code);
+      }
+
+      @include mixin.mqP(lg) {
+        &:active {
+          border-color: var(--color-category-code);
+        }
+      }
+
+      @include mixin.mq(lg) {
+        @include mixin.hover {
+          border-color: var(--color-category-code);
+        }
+      }
+
+      &.current {
+        color: var(--color-white);
+      }
+    }
+  }
+
+  & > li {
+    &.current {
+      &:first-of-type {
+        transform-origin: left;
+      }
+      &:last-of-type {
+        transform-origin: right;
+      }
+    }
+  }
+
+  &-item--expand {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity var(--transitionDuration-default) var(--transitionTimingFunction-default),
+      visibility var(--transitionDuration-default) var(--transitionTimingFunction-default) 1.5s,
+      width var(--transitionDuration-default) var(--transitionTimingFunction-default) 2s;
+
+    @include mixin.theme(dark) {
+      svg path {
+        fill: var(--color-white);
+      }
+    }
+  }
+
+  &[data-state-category-tab="shrinked"] {
+    @include mixin.mq(lg) {
+      // animation:
+      //   1s ease-in-out forwards categoryTabAnimation .5s,
+      //   .5s ease forwards moveBottom 2.75s;
+      animation: 1s ease-in-out forwards categoryTabAnimation .5s;
+
+      @include mixin.hover {
+        transform: scale(1.2);
+      }
+
+      .category-tab__list-item:not(.category-tab__list-item--expand) {
+        width: 0;
+        opacity: 0;
+        border: none;
+      }
+
+      .category-tab__list-item--expand {
+        width: 100%;
+        cursor: pointer;
+        opacity: 1;
+        visibility: visible;
+        z-index: 2;
+      }
+    }
+  }
+
+  &[data-state-category-tab="expanded"] {
+    @include mixin.mq(lg) {
+      animation: .5s linear forwards categoryTabAnimation_reverse;
+
+      .category-tab__list-item:not(.category-tab__list-item--expand) {
+        opacity: 1;
+
+        transition:
+          background var(--transitionDuration-default) var(--transitionTimingFunction-default),
+          border var(--transitionDuration-default) var(--transitionTimingFunction-default),
+          border-radius var(--transitionDuration-default) var(--transitionTimingFunction-default),
+          filter var(--transitionDuration-default) var(--transitionTimingFunction-default),
+          opacity var(--transitionDuration-default) var(--transitionTimingFunction-default) .5s,
+          transform var(--transitionDuration-default) var(--transitionTimingFunction-default),
+          width var(--transitionDuration-default) var(--transitionTimingFunction-default);
+      }
+
+      .category-tab__list-item--expand {
+        transition:
+          opacity 0ms var(--transitionTimingFunction-default),
+          visibility 0ms var(--transitionTimingFunction-default),
+          width 0ms var(--transitionTimingFunction-default);
+      }
+    }
+  }
+}

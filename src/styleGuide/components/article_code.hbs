@@ -1,0 +1,442 @@
+<div class="main-content" data-category="code">
+  <!-- コードハイライター使用例 -->
+  <section class="section-style section-style--hightlight-sample js-intersectTarget" id="hightlightSample" data-indexname="コードハイライター使用例">
+    <h2 class="title-txt">コードハイライター 使用例</h2>
+
+    <div class="content-wrapper">
+      <pre class="code-preview code-preview--html">
+        &lt;div class="header__navigation-container-item--test header__search-icon hidden-desktop" onclick="openModal('search', this)" data-toggleicon="before"&gt;
+          &lt;div class="header__icon-wrapper header__search-icon--open"&gt;
+            &lt;svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"&gt; &lt;g id="グループ_1531" data-name="グループ 1531" transform="translate(-471 -75)"&gt; &lt;circle id="楕円形_16" data-name="楕円形 16" cx="40" cy="40" r="40" transform="translate(471 75)" fill="#413d3c"/&gt; &lt;path id="Icon_material-search" data-name="Icon material-search" d="M35.177,31.5H33.238l-.687-.663a15.976,15.976,0,1,0-1.718,1.718l.663.687v1.939L43.767,47.424l3.657-3.657Zm-14.725,0A11.044,11.044,0,1,1,31.5,20.452,11.029,11.029,0,0,1,20.452,31.5Z" transform="translate(485.522 89.522)" fill="#fff"/&gt; &lt;/g&gt;&lt;/svg&gt;
+          &lt;/div&gt;
+          &lt;span class="header__navigation-name header__search-icon--open"&gt;
+            検索
+          &lt;/span&gt;
+
+          &lt;div class="header__icon-wrapper header__search-icon--close"&gt;
+            &lt;svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"&gt; &lt;circle id="楕円形_16" data-name="楕円形 16" cx="40" cy="40" r="40" fill="#413d3c"/&gt; &lt;path id="パス_1668" data-name="パス 1668" d="M43.326,38.835,32.833,28.342,43.326,17.849a3.182,3.182,0,0,0-4.5-4.5L28.333,23.842,17.839,13.349a3.044,3.044,0,0,0-4.5,0,3.075,3.075,0,0,0,0,4.5L23.833,28.342,13.339,38.835a3.077,3.077,0,0,0,0,4.5,3.161,3.161,0,0,0,4.5,0L28.333,32.842,38.826,43.335a3.2,3.2,0,0,0,4.5,0A3.161,3.161,0,0,0,43.326,38.835Z" transform="translate(11.641 11.646)" fill="#fff"/&gt;&lt;/svg&gt;
+          &lt;/div&gt;
+          &lt;span class="header__navigation-name header__search-icon--close"&gt;
+            閉じる
+          &lt;/span&gt;
+        &lt;/div&gt;
+      </pre>
+    </div>
+
+    <div class="content-wrapper">
+      <pre class="code-preview code-preview--scss">
+        .header {
+          &__hamburgermenu {
+            &-modal {
+              @include mixin.mqP(lg) {
+                position: fixed;
+                top: var(--headerHeight-innerTop);
+                left: 0;
+                width: 100%;
+                height: calc(100% - var(--headerHeight-innerTop));
+                padding-top: 2rem;
+                padding-bottom: 5rem;
+                background-color: var(color-beige);
+                transition-property: transform;
+                transform: translateY(-100%);
+                overflow-y: scroll;
+                z-index: 30;
+
+                &[data-modalState="opened"] {
+                  transform: translateY(0);
+
+                  .header__search-wrapper,
+                  .header__keyword-container {
+                    opacity: 1;
+                    visibility: visible;
+                  }
+                }
+              }
+              @include mixin.mq(lg) {
+                display: none;
+              }
+            }
+          }
+        }
+      </pre>
+    </div>
+
+    <div class="content-wrapper">
+      <pre class="code-preview code-preview--ts" data-rl-caption="Global Variables">
+        /**
+        * @author Y.T
+        */
+
+
+        /* ===============================================
+          * Global Variables *
+        =============================================== */
+
+        /**
+          * ドキュメントのルート要素(= html要素)
+          *
+          * @type {object}
+          */
+        export let rootElm = document.querySelector<HTMLElement>("html");
+
+        /**
+          * ドキュメントのbody要素
+          *
+          * @type {object}
+          */
+        export let bodyElm = document.querySelector<HTMLElement>("body");
+
+        /**
+          * 画面幅(ビューポート).
+          *
+          * @type {number}
+          * @function refreshWindowSize
+          */
+        export let screenWidth: number = window.innerWidth;
+
+        /**
+          * 画面高(ビューポート).
+          *
+          * @type {number}
+          * @function refreshWindowSize
+          */
+        export let screenHeight: number = window.innerHeight;
+
+        /** モバイルデバイスを判定する画面幅 */
+        export const MOBILE_SCREEN_WIDTH = 768;
+
+        /** デスクトップデバイスを判定する画面幅 */
+        export const DESKTOP_SCREEN_WIDTH = 1200;
+
+        /**
+          * ユーザーエージェント.
+          *
+          * @type {string} 小文字に変換済み
+          */
+        export const userAgent: string = window.navigator.userAgent.toLowerCase();
+
+        /**
+          * iOS端末の判定.
+          *
+          * @type {boolean} [true | false]
+          */
+        export const iOS: boolean = userAgent.indexOf("iphone") > -1 || userAgent.indexOf("ipad") > -1 || userAgent.indexOf("macintosh") > -1 && "ontouchend" in document;
+
+        /**
+          * Android端末の判定.
+          *
+          * @type {boolean} [true | false]
+          */
+        export const Android: boolean = userAgent.indexOf("android") > -1 && "ontouchend" in document;
+
+        /**
+          * デフォルトのアニメーション速度.
+          *
+          * CSS変数から値を取得しています.
+          *
+          * @type {number} [--transitionDuration-default] アニメーション速度.単位はms.
+          * @type {number} [undefined] 変数が存在しない場合、300を代入。
+          */
+        export const defaultAnimationSpeed: number = getComputedStyle(document.documentElement).getPropertyValue("--transitionDuration-default") ? Number(getComputedStyle(document.documentElement).getPropertyValue("--transitionDuration-default").replace("ms", "")) : 300;
+
+
+        /* ===============================================
+          * DOMツリー構築後に値を再代入する *
+          TODO: type="module"で読み込むので、ここの処理は必要ないかも
+        =============================================== */
+
+        document.addEventListener("DOMContentLoaded", function() {
+          rootElm = document.querySelector<HTMLElement>("html");
+          bodyElm = document.querySelector<HTMLElement>("body");
+          screenWidth = window.innerWidth;
+          screenHeight = window.innerHeight;
+        });
+
+
+        /* ===============================================
+          * 画面リサイズ時に値を再代入する *
+        =============================================== */
+
+        /** 画面幅の値を再代入する */
+        function reassignmentWindowSize() {
+          screenWidth = window.innerWidth;
+          screenHeight = window.innerHeight;
+        }
+
+        /** resizeイベント発火時、画面幅が異なる時に値を再代入する */
+        function refreshWindowSize() {
+          screenWidth !== window.innerWidth && reassignmentWindowSize();
+        }
+
+        window.onresize = refreshWindowSize;
+      </pre>
+    </div>
+
+    <div class="content-wrapper">
+      <pre class="code-preview code-preview--ts" data-rl-caption="ボディ固定処理">
+        /**
+          * @author Y.T
+          */
+
+
+        /** import ES modules */
+        import * as globalVar from './m_global_variable';
+
+
+        /**
+          * 現在のスクロール位置.
+          *
+          * @type {number}
+          */
+        let scrollPosition = 0;
+
+        /**
+          * モーダルの表示状態を判定するフラグ
+          *
+          * @type {boolean} modalStateFlg
+          */
+        let modalStateFlg = false;
+
+        /**
+          * html に scroll-behavior: smooth が設定されているか判定するフラグ.
+          *
+          * @type {boolean}
+          */
+        const SMOOTH_SCROLL_FLG = globalVar.rootElm && (getComputedStyle(globalVar.rootElm).getPropertyValue("scroll-behavior") === "smooth");
+
+
+
+
+        /* ===============================================
+          * モーダル関連 *
+        =============================================== */
+
+        /**
+          * モーダル有効時の背景固定を有効化する.
+          */
+        export function bodyFixedOn() {
+          if (globalVar.rootElm && globalVar.bodyElm) {
+            modalStateFlg = true;
+
+            globalVar.iOS ? (
+              SMOOTH_SCROLL_FLG && (globalVar.rootElm.style.scrollBehavior = "auto"),
+              scrollPosition = window.pageYOffset,
+              globalVar.bodyElm.style.cssText = `position: fixed; top: -${scrollPosition}px; height: 100vh; overflow: hidden;`
+            )
+            : globalVar.bodyElm.style.overflow = "hidden";
+
+            modalStateFlg && globalVar.rootElm.setAttribute("data-bodyfixedstate", "fixed");
+          }
+        }
+
+        /**
+          * モーダル有効時の背景固定を無効化する.
+          */
+        export function bodyFixedOff() {
+          if (globalVar.rootElm && globalVar.bodyElm) {
+            modalStateFlg = false;
+
+            globalVar.iOS ? (
+              globalVar.bodyElm.style.removeProperty("position"),
+              globalVar.bodyElm.style.removeProperty("top"),
+              window.scrollTo({
+                top: scrollPosition,
+                left: 0,
+                behavior: 'auto'
+              }),
+              globalVar.bodyElm.style.removeProperty("overflow"),
+              globalVar.rootElm.style.height = "",
+              SMOOTH_SCROLL_FLG && (globalVar.rootElm.style.scrollBehavior = "smooth")
+            )
+            : globalVar.bodyElm.style.removeProperty("overflow");
+
+            !modalStateFlg && globalVar.rootElm.setAttribute("data-bodyfixedstate", "unfixed");
+          }
+        }
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="section-style section-style--codingrule js-intersectTarget" id="codingRule_CODE_1" data-indexname="Web Components_0">
+    <h2 class="title-txt">Web Components学習用エリア_0</h2>
+
+    <hello-world></hello-world><br>
+    <hello-world name="Viewer"></hello-world><br>
+
+    <div class="content-wrapper">
+      <pre class="code-preview code-preview--js">
+        /* ===============================================
+          * 練習0: Hello World *
+        =============================================== */
+        class HelloWorld extends HTMLElement {
+          // connectedCallback() {
+          //   this.textContent = 'Hello World!';
+          // }
+
+          // 各オブジェクト作成時(= コンポーネント初期化時)に実行される。
+          // デフォルトの設定や、その他のプリレンダリング処理を行う。
+          constructor() {
+            super();
+            this.name = 'World';//属性が存在しない時の値
+          }
+
+          // 監視する属性名のプロパティの配列を返す
+          static get observedAttributes() {
+            return ['name'];
+          }
+
+          // 属性が定義された時や変更された時に呼び出される。
+          attributeChangedCallback(property, oldValue, newValue) {
+            if (oldValue === newValue) return;
+            this[property] = newValue;
+          }
+
+          // Web ComponentがDOMに追加された時に呼び出され、必要なレンダリングをすべて実行する
+          connectedCallback() {
+            this.textContent = `Hello ${this.name}`;
+          }
+        }
+
+        customElements.define('hello-world', HelloWorld);
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="section-style section-style--codingrule js-intersectTarget" id="codingRule_CODE_2" data-indexname="Web Components_1">
+    <h2 class="title-txt">Web Components学習用エリア_1</h2>
+
+    <simple-clock></simple-clock><br>
+
+    <div class="content-wrapper">
+      <pre class="code-preview code-preview--js">
+        /* ===============================================
+          * 練習1: 現在時刻の表示 *
+        =============================================== */
+        class SimpleClock extends HTMLElement {
+          constructor() {
+            super();//親クラスのコンストラクターを参照するため、必須。
+
+            // Create Shadow DOM
+            this.shadow = this.attachShadow({
+              mode: 'open'//shadow rootの外側から操作できるようになる
+            });
+
+            // create h1 element displays current time under the shadow DOM
+            const now = new Date();
+            const clockElement = document.createElement('h1');
+            clockElement.textContent = `Current time is ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+            this.shadow.append(clockElement);
+          }
+        }
+
+        // 即時関数
+        (function main() {
+          // defined SimpleClock class named simple-clock
+          customElements.define("simple-clock", SimpleClock);
+        })();
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="section-style section-style--codingrule js-intersectTarget" id="codingRule_CODE_3" data-indexname="Web Components_2">
+    <h2 class="title-txt">Web Components学習用エリア_2</h2>
+
+    <copy-color value="color-error" font="white"></copy-color>
+
+    <copy-color value="color-test" font="white"></copy-color>
+
+    <div class="content-wrapper">
+      <pre class="code-preview code-preview--js">
+        /**
+          * カラーチップを生成するためのWebComponents
+          */
+        class CopyColorVal extends HTMLElement {
+          constructor() {
+            super();
+            this.value = 'EMPTY';
+            this.font = '#000';
+          }
+
+          static get observedAttributes() {
+            return ['value', 'font'];
+          }
+
+          attributeChangedCallback(property, oldValue, newValue) {
+            if (oldValue === newValue) return;
+            this[property] = newValue;
+          }
+
+          connectedCallback() {
+            /**
+              * 変数が見つからない時に表示する文字.
+              *
+              *  @type {string} errorTxt
+              */
+            const errorTxt = "NOT FOUND";
+
+            /**
+              * CSS変数の名前.
+              *
+              *  @type {string} customPropName
+              */
+            let customPropName = this.value;
+
+            /**
+              * CSS変数の値.
+              *
+              * @type {string} customPropVal
+              */
+            let customPropVal = getComputedStyle(document.documentElement).getPropertyValue(`--${this.value}`);
+
+            /**
+              * フロントに表示するCSS変数の値を処理.
+              *
+              * valueで設定したCSS変数が存在するか否かで対応する値を代入する.
+              *
+              * @type {string} displayPropVal
+              */
+            let displayPropVal = !(customPropVal) ? errorTxt : customPropVal;
+
+            /**
+              * コピーするテキスト.
+              *
+              *  @type {string} copyVal
+              */
+            let copyVal = (displayPropVal === errorTxt) ? "値を確認してください" : `var(--${customPropName})`;
+
+            /**
+              * カラーチップのフォントの色.
+              *
+              *  @type {string} fontColor
+              */
+            let fontColor = (this.font === "white") ? '#fff' : '#000';
+
+            // const shadow = this.attachShadow({mode: 'open'});
+
+            // shadow.innerHTML = `
+            this.innerHTML = `
+              &lt;div class="color-tile--colorsample" style="background-color:${customPropVal};color:${fontColor}"&gt;
+                ${displayPropVal}
+              &lt;/div&gt;
+
+              &lt;div class="color-tile--colorname"&gt;
+                ${customPropName}
+                &lt;button class="code" type="button"&gt;
+                  ${copyVal}
+                  &lt;svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"&gt;&lt;path fill="currentColor" d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"&gt;&lt;/path&gt;&lt;/svg&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;
+            `;
+
+            (displayPropVal === errorTxt) && this.setAttribute('error', 'true');
+          }
+        }
+
+        customElements.define('copy-color', CopyColorVal);
+      </pre>
+    </div>
+  </section>
+</div>

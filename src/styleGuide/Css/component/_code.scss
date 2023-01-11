@@ -1,0 +1,105 @@
+@charset "UTF-8";
+@use "../../../Css/foundation/function" as function;
+@use "../../../Css/foundation/mixin" as mixin;
+@use "../../../Css/foundation/variable" as variable;
+
+
+/* ===============================================
+  * コード関連のスタイル *
+=============================================== */
+@include mixin.mqP(lg) {
+  /* ===============================================
+    * コード関連のスタイル *
+  =============================================== */
+}
+@include mixin.mq(lg) {
+  /* ===============================================
+    * コード関連のスタイル *
+  =============================================== */
+}
+
+
+.code {
+  display: block;
+
+  position: relative;
+
+  width: 100%;
+  padding-right: 3rem;
+  padding-left: 0.5rem;
+  background: var(--color-bg-main);
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  border-radius: var(--borderRadius-small);
+  color: var(--color-primary);
+  // font-family: inherit;
+  font-family: variable.$code-ff;
+  font-size: 1.2rem;
+  font-weight: var(--fontweight-m);
+  // letter-spacing: 0.05em;
+  line-height: 3;
+  // cursor: pointer;
+
+  user-select: none;
+
+  transition-property: background, border, box-shadow;
+  transition-duration: var(--transitionDuration-fast);
+  transition-timing-function: var(--transitionTimingFunction-default);
+
+  path {
+    transition-property: fill;
+    transition-duration: var(--transitionDuration-fast);
+    transition-timing-function: var(--transitionTimingFunction-default);
+  }
+
+  @include mixin.mqP(lg) {
+    &:active {
+      border-color: transparent;
+      // box-shadow: var(--elevation-4);
+      box-shadow: inset 20px 20px 60px #cbcbcb, inset -20px -20px 60px #ffffff;
+
+      path {
+        fill: var(--color-primary);
+      }
+    }
+  }
+
+  @include mixin.mq(lg) {
+    @include mixin.hover {
+      background: var(--color-silver-white);
+      border-color: transparent;
+      // box-shadow:  9px 9px 18px #cbcbcb, -9px -9px 18px #ffffff;
+      box-shadow: var(--elevation-4);
+
+      path {
+        fill: var(--color-primary);
+      }
+    }
+
+    &:active {
+      box-shadow: inset 20px 20px 60px #cbcbcb, inset -20px -20px 60px #ffffff;
+      // box-shadow: var(--elevation-8);
+    }
+  }
+}
+
+.icon--copy {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  bottom: 0;
+  width: 1.7rem;
+  margin: auto;
+  color: grey;
+}
+
+
+/* style of code highlighter */
+.code-preview {
+  font-family: variable.$code-ff;
+
+  & > * {
+    border: solid 1px var(--color-very-light-grey);
+    border-radius: var(--borderRadius-regular);
+    overflow: hidden;
+  }
+}

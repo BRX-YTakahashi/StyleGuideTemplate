@@ -1,0 +1,29 @@
+@charset "UTF-8";
+@use "../../../Css/foundation/function" as function;
+@use "../../../Css/foundation/mixin" as mixin;
+@use "../../../Css/foundation/variable" as variable;
+
+
+/* ===============================================
+  * MOVIE *
+=============================================== */
+@include mixin.mqP(lg) {
+  /* ===============================================
+    * MOVIE *
+  =============================================== */
+}
+@include mixin.mq(lg) {
+  /* ===============================================
+    * MOVIE *
+  =============================================== */
+}
+
+
+.movie-wrapper {
+  & > iframe {
+    width: 100%;
+    height: fit-content;
+    padding: 2rem;
+    aspect-ratio: 1;
+  }
+}

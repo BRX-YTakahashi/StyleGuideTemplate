@@ -1,0 +1,110 @@
+@charset "UTF-8";
+@use "../foundation/variable" as variable;
+
+/*
+ * レスポンシブユーティリティ
+ */
+.d-none {
+  display: none !important
+}
+.d-inline {
+  display: inline !important
+}
+.d-inline-block {
+  display: inline-block !important
+}
+.d-block {
+  display: block !important
+}
+.d-table {
+  display: table !important
+}
+.d-table-row {
+  display: table-row !important
+}
+.d-table-cell {
+  display: table-cell !important
+}
+.d-flex {
+  display: flex !important
+}
+.d-inline-flex {
+  display: inline-flex !important
+}
+.d-grid {
+  display: grid !important
+}
+
+
+@media (min-width: variable.$screenSize_Medium) {
+  /*
+   * レスポンシブユーティリティ
+   */
+  .d-md-none {
+    display: none !important
+  }
+  .d-md-inline {
+    display: inline !important
+  }
+  .d-md-inline-block {
+    display: inline-block !important
+  }
+  .d-md-block {
+    display: block !important
+  }
+  .d-md-table {
+    display: table !important
+  }
+  .d-md-table-row {
+    display: table-row !important
+  }
+  .d-md-table-cell {
+    display: table-cell !important
+  }
+  .d-md-flex {
+    display: flex !important
+  }
+  .d-md-inline-flex {
+    display: inline-flex !important
+  }
+  .d-grid {
+    display: grid !important
+  }
+}
+
+
+@media (min-width: variable.$screenSize_XLarge) {
+  /*
+   * レスポンシブユーティリティ
+   */
+  .d-xl-none {
+    display: none !important
+  }
+  .d-xl-inline {
+    display: inline !important
+  }
+  .d-xl-inline-block {
+    display: inline-block !important
+  }
+  .d-xl-block {
+    display: block !important
+  }
+  .d-xl-table {
+    display: table !important
+  }
+  .d-xl-table-row {
+    display: table-row !important
+  }
+  .d-xl-table-cell {
+    display: table-cell !important
+  }
+  .d-xl-flex {
+    display: flex !important
+  }
+  .d-xl-inline-flex {
+    display: inline-flex !important
+  }
+  .d-grid {
+    display: grid !important
+  }
+}

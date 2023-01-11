@@ -1,0 +1,109 @@
+@charset "UTF-8";
+@use "../../../Css/foundation/function" as function;
+@use "../../../Css/foundation/mixin" as mixin;
+@use "../../../Css/foundation/variable" as variable;
+
+/* ===============================================
+  * section-style--responsive *
+=============================================== */
+@include mixin.mqP(lg) {
+  /* ===============================================
+    * section-style--responsive *
+  =============================================== */
+}
+@include mixin.mq(lg) {
+  /* ===============================================
+    * section-style--responsive *
+  =============================================== */
+}
+
+.section-style--responsive {
+  .responsive-utility {
+    .title-txt {
+      margin-left: 2%;
+      padding-left: 1%;
+      font-size: 1.25em;
+    }
+
+    .img__wrapper {
+      width: 80%;
+      margin-bottom: 1.6rem;
+      padding: 0.5em;
+      border: solid 1px rgba(0, 0, 0, 0.2);
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .responsive-utility--caution {
+    display: block;
+    width: 80%;
+    margin-bottom: 5rem;
+    margin-left: 4vw;
+    color: var(--color-attention);
+    line-height: 1.5;
+  }
+
+  .responsive-utility__container {
+    margin-right: auto;
+    margin-left: auto;
+
+    & > li:not(:last-of-type) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  .responsive-utility__list .code__list-item {
+    margin-bottom: 1rem;
+  }
+
+  .responsive-utility__list-item {
+    position: relative;
+    width: 30rem;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    padding: 1rem 2rem;
+    border-radius: 5rem 0.5rem 5rem 0.5rem;
+    background-color: var(--color-blue);
+    color: #fff;
+    text-align: center;
+    z-index: 2;
+  }
+}
+
+
+@include mixin.mq(lg) {
+  .section-style--responsive {
+    .responsive-utility .img__wrapper {
+      width: 73rem;
+      margin-left: 4vw;
+      padding: 2rem;
+    }
+
+    .responsive-utility__list {
+      .responsive-utility__list-btns {
+        display: flex;
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .code__list {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 2rem;
+      }
+
+      .code__list-item {
+        width: 30%;
+      }
+    }
+  }
+}

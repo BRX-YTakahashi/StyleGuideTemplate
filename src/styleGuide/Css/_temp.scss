@@ -1,0 +1,32 @@
+@charset "UTF-8";
+@use "../../../Css/foundation/function" as function;
+@use "../../../Css/foundation/mixin" as mixin;
+@use "../../../Css/foundation/variable" as variable;
+
+
+/* ===============================================
+  * TITLE *
+=============================================== */
+@include mixin.mqP(lg) {
+  /* ===============================================
+    * TITLE *
+  =============================================== */
+}
+@include mixin.mq(lg) {
+  /* ===============================================
+    * TITLE *
+  =============================================== */
+}
+
+
+.class {
+
+
+  @include mixin.mqP(lg) {
+
+  }
+
+  @include mixin.mq(lg) {
+
+  }
+}

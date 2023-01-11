@@ -1,0 +1,53 @@
+@charset "UTF-8";
+@use "../../../Css/foundation/function" as function;
+@use "../../../Css/foundation/mixin" as mixin;
+@use "../../../Css/foundation/variable" as variable;
+
+
+/* ===============================================
+  * TOAST *
+=============================================== */
+@include mixin.mqP(lg) {
+  /* ===============================================
+    * TOAST *
+  =============================================== */
+}
+@include mixin.mq(lg) {
+  /* ===============================================
+    * TOAST *
+  =============================================== */
+}
+
+
+#toast {
+  position: fixed;
+  right: 0;
+  bottom: 5vh;
+  left: 0;
+  max-width: 40rem;
+  width: fit-content;
+  margin: auto;
+  padding: 1ch 4ch;
+  background-color: rgba($color: #7e7e7e, $alpha: .8);
+  backdrop-filter: blur(.2rem);
+  border-radius: var(--borderRadius-regular);
+  color: var(--color-white);
+  line-height: 1.5;
+  word-break: break-all;
+  pointer-events: none;
+  z-index: var(--zindex-modal);
+
+  transition-property: opacity, visibility;
+  transition-duration: var(--transitionDuration-default);
+  transition-timing-function: var(--transitionTimingFunction-default);
+
+  &[data-state-toast="inactive"] {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &[data-state-toast="active"] {
+    opacity: 1;
+    visibility: visible;
+  }
+}
