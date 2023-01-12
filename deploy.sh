@@ -26,8 +26,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git config user.email "y.takahashi@brandex.ne.jp"
-git config user.name "BRX-YTakahashi"
 git push -f git@github.com:BRX-YTakahashi/StyleGuideTemplate.git main:gh-pages
 
 cd -
