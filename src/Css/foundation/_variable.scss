@@ -45,13 +45,14 @@ $base-color: #000;
 // * font-family *
 
 // $base-ff: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "Yu Gothic", "Open Sans", "メイリオ", sans-serif;
-$jp-ff: "M PLUS 1p";
+// $jp-ff: "M PLUS 1p";
+$jp-ff: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo;
 $en-ff: "Roboto";
 $code-ff: "IBM Plex Mono";
-// $base-ff: $en-ff, $jp-ff, sans-serif;
-$base-ff: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-// $code-ff: $code-ff, $jp-ff, sans-serif;
-$code-ff: $code-ff, sans-serif;
+// $base-ff: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+$base-ff: $en-ff, $jp-ff, sans-serif;
+// $code-ff: $code-ff, sans-serif;
+$code-ff: $code-ff, $jp-ff, sans-serif;
 
 
 @media #{map-get($breakpoints-down, lg)} {

@@ -107,7 +107,3 @@ dist_mobile
 # others
 *.alias
 .DS_Store
-fonts/
-woff/
-imgs/
-compare-performance/
