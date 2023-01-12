@@ -36,6 +36,9 @@ jobs:
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
+      - name: Run build script
+        run: sh ./deploy.sh
+        shell: bash
 
   # Deployment job
   deploy:
@@ -48,6 +51,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-      - name: Run build script
-        run: sh ./deploy.sh
-        shell: bash
