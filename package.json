@@ -6,12 +6,14 @@
   "scripts": {
     "dev": "vite && vite --host --mode development",
     "build": "vite build",
-    "preview": "vite preview --host"
+    "preview": "vite preview --host",
+    "deploy": "vite build --mode deploy && gh-pages -d dist"
   },
   "devDependencies": {
     "@types/node": "^18.7.18",
     "autoprefixer": "^10.4.11",
     "css-declaration-sorter": "^6.3.1",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.16",
     "postcss-sort-media-queries": "^4.3.0",
     "sass": "^1.54.9",

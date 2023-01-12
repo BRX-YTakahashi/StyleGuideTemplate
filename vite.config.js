@@ -59,7 +59,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 
     return {
       root: './src',
-      base: '/',
+      base: (command === "deploy") ? '/StyleGuideTemplate/' : '/',
       publicDir: '../public',
 
       build: {
