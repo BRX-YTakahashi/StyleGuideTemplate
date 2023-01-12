@@ -78,5 +78,3 @@ npm run deploy
 TODO: `index.html`を設置している箇所がルートではなく`/styleGuide`直下なので、デプロイ後に生成される[URL](https://brx-ytakahashi.github.io/StyleGuideTemplate/)だと404エラーになってしまう。要調整。
 
 ## その他
-
-GitHub Pages検証のために追記。
