@@ -49,5 +49,5 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1
       - name: Run build script
-        run: ./deploy.sh
+        run: deploy.sh
         shell: bash
