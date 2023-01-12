@@ -62,3 +62,7 @@ npm run build
 ```Terminal
 npm run preview
 ```
+
+## その他
+
+GitHub Pages検証のために追記
