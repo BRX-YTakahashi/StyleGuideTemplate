@@ -77,15 +77,15 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
               }
 
               if (extType === 'css') {
-                return `assets/css/style.css`;
+                return `styleGuide/assets/css/style.css`;
               }
 
-              return `assets/${extType}/[name][extname]`;
+              return `styleGuide/assets/${extType}/[name][extname]`;
             },
 
-            chunkFileNames: 'assets/js/[name].js',
+            chunkFileNames: 'styleGuide/assets/js/[name].js',
 
-            entryFileNames: 'assets/js/[name].js',
+            entryFileNames: 'styleGuide/assets/js/[name].js',
           },
         },
 
