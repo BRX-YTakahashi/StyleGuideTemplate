@@ -65,4 +65,4 @@ npm run preview
 
 ## その他
 
-GitHub Pages検証のために追記
+GitHub Pages検証のために追記。
