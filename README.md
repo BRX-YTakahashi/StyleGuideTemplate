@@ -1,5 +1,9 @@
 # Style Guide Template
 
+DEMO: <https://brx-ytakahashi.github.io/StyleGuideTemplate/styleGuide/>
+
+----
+
 お手軽にスタイルガイドを作成するためのテンプレートです。
 
 ## スタイルガイドの技術仕様
@@ -62,6 +66,12 @@ npm run build
 ```Terminal
 npm run preview
 ```
+
+### デモページへの反映
+
+[gh-pages](https://github.com/tschaub/gh-pages)というライブラリーを使用して、GitHub Pagesでビルド後のページが確認できるようにしています。
+
+TODO: `index.html`を設置している箇所がルートではなく`/styleGuide`直下なので、デプロイ後に生成される[URL](https://brx-ytakahashi.github.io/StyleGuideTemplate/)だと404エラーになってしまう。要調整。
 
 ## その他
 
