@@ -4,9 +4,9 @@
 
 
 // import ES modules
-import * as globalVar from '../../Js/modules/m_global_variable';
-import { bodyFixedOn, disableModal } from '../../Js/modules/m_fixed_body';
-import { scrollToTop, scrollToTop_smooth } from '../../Js/modules/m_scroll_pagetop';
+import * as globalVar from '../../../public/Js/modules/m_global_variable';
+import { bodyFixedOn, disableModal } from '../../../public/Js/modules/m_fixed_body';
+import { scrollToTop, scrollToTop_smooth } from '../../../public/Js/modules/m_scroll_pagetop';
 
 // import md files for parse and transform
 import Markdoc from '@markdoc/markdoc';

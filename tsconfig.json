@@ -105,6 +105,6 @@
   "include": [
     "src",
     "./.eslintrc.js",
-    "vite-env.d.ts",
+    "vite-env.d.ts", "public/Js/modules/m_fixed_body.ts",
   ]
 }
