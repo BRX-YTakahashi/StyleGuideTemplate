@@ -57,60 +57,118 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
   } else {
     // command === "build"
 
-    return {
-      root: './src',
-      base: (command === "deploy") ? '/StyleGuideTemplate/' : '/',
-      publicDir: '../public',
+    if (mode === "deploy") {
+      return {
+        root: './src',
+        base: '/StyleGuideTemplate/',
+        publicDir: '../public',
 
-      build: {
-        rollupOptions: {
-          input: {
-            main: resolve(__dirname, './src', 'styleGuide/index.html')
-          },
-
-          output: {
-            assetFileNames: (assetInfo) => {
-              let extType = assetInfo.name.split('.')[1];
-
-              if (/png|jpe?g|webp|svg|gif|tiff|bmp|ico/i.test(extType)) {
-                extType = 'images';
-              }
-
-              if (extType === 'css') {
-                return `styleGuide/assets/css/style.css`;
-              }
-
-              return `styleGuide/assets/${extType}/[name][extname]`;
+        build: {
+          rollupOptions: {
+            input: {
+              main: resolve(__dirname, './src', 'styleGuide/index.html')
             },
 
-            chunkFileNames: 'styleGuide/assets/js/[name].js',
+            output: {
+              assetFileNames: (assetInfo) => {
+                let extType = assetInfo.name.split('.')[1];
 
-            entryFileNames: 'styleGuide/assets/js/[name].js',
+                if (/png|jpe?g|webp|svg|gif|tiff|bmp|ico/i.test(extType)) {
+                  extType = 'images';
+                }
+
+                if (extType === 'css') {
+                  return `styleGuide/assets/css/style.css`;
+                }
+
+                return `styleGuide/assets/${extType}/[name][extname]`;
+              },
+
+              chunkFileNames: 'styleGuide/assets/js/[name].js',
+
+              entryFileNames: 'styleGuide/assets/js/[name].js',
+            },
+          },
+
+          outDir: '../dist',
+
+          emptyOutDir: true,
+
+          raw: {
+            extensions : ['html', 'txt', 'md'],
+            glob: ['**.html', '**.md']
           },
         },
 
-        outDir: '../dist',
+        plugins: [
+          handlebars({
+            partialDirectory: resolve(__dirname, './src', 'styleGuide/components'),
+            context(pagePath) {
+              return pageData[pagePath];
+            },
+          }),
 
-        emptyOutDir: true,
+          markdoc(),
 
-        raw: {
-          extensions : ['html', 'txt', 'md'],
-          glob: ['**.html', '**.md']
-        },
-      },
+          ViteMinifyPlugin({}),
+        ]
+      }
+    } else {
+      return {
+        root: './src',
+        base: '/',
+        publicDir: '../public',
 
-      plugins: [
-        handlebars({
-          partialDirectory: resolve(__dirname, './src', 'styleGuide/components'),
-          context(pagePath) {
-            return pageData[pagePath];
+        build: {
+          rollupOptions: {
+            input: {
+              main: resolve(__dirname, './src', 'styleGuide/index.html')
+            },
+
+            output: {
+              assetFileNames: (assetInfo) => {
+                let extType = assetInfo.name.split('.')[1];
+
+                if (/png|jpe?g|webp|svg|gif|tiff|bmp|ico/i.test(extType)) {
+                  extType = 'images';
+                }
+
+                if (extType === 'css') {
+                  return `styleGuide/assets/css/style.css`;
+                }
+
+                return `styleGuide/assets/${extType}/[name][extname]`;
+              },
+
+              chunkFileNames: 'styleGuide/assets/js/[name].js',
+
+              entryFileNames: 'styleGuide/assets/js/[name].js',
+            },
           },
-        }),
 
-        markdoc(),
+          outDir: '../dist',
 
-        ViteMinifyPlugin({}),
-      ]
+          emptyOutDir: true,
+
+          raw: {
+            extensions : ['html', 'txt', 'md'],
+            glob: ['**.html', '**.md']
+          },
+        },
+
+        plugins: [
+          handlebars({
+            partialDirectory: resolve(__dirname, './src', 'styleGuide/components'),
+            context(pagePath) {
+              return pageData[pagePath];
+            },
+          }),
+
+          markdoc(),
+
+          ViteMinifyPlugin({}),
+        ]
+      }
     }
   }
 });
