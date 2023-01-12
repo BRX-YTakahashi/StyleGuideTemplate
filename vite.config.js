@@ -59,7 +59,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 
     return {
       root: './src',
-      base: process.env.GITHUB_PAGES ? 'StyleGuideTemplate' : './',
+      base: process.env.GITHUB_PAGES ? '/StyleGuideTemplate' : '/',
       publicDir: '../public',
 
       build: {
