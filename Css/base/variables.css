@@ -10,53 +10,56 @@
 :root {
 
   /* =======================================================================
-    色
+    Color
   ======================================================================= */
 
-  /* ユーティリティー系 */
-  --color-error: #e25858;
-  --color-main: #000;
+  /* Utility */
+  --color-main: var(--color-black);
   --color-bg-main: #f8f8f8;
-  --color-font: #000;
-  --color-attention: #e25858;
+  --color-font: var(--color-black);
   --color-primary: #58B8e2;
-  --color-warning: #e25858;
+  --color-error: var(--color-red);
+  --color-attention: var(--color-red);
+  --color-warning: var(--color-red);
 
-  /* 汎用 */
-  --color-black: #000;
+
+  /* General */
   --color-white: #fff;
+  --color-black: #000;
+  --color-grey: #7e7e7e;
+  --color-grey-lighter: #dfdfdf;
+  --color-grey-light: #adadad;
+  --color-grey-dark: #525252;
+  --color-grey-darker: #2a2a2a;
+
   --color-red: #e25858;
-  --color-light-red: #ef9a9a;
-  --color-dark-red: #9a0007;
-  --color-green: #055818;
-  --color-light-green: #a5d6a7;
-  --color-dark-green: #004c40;
-  --color-blue: #1976d2;
-  --color-light-blue: #81d4fa;
-  --color-dark-blue: #004ba0;
+  --color-red-light: #ef9a9a;
+  --color-red-dark: #9a0007;
   --color-orange: #d67936;
   --color-yellow: #e5dc09;
 
-  /* グレー */
-  --color-white-grey: #fafafa; /* 薄いグレー */
-  --color-white-smoke: #f8f7f7;
-  --color-silver-white: #efefef;
-  --color-very-light-grey: #e3e3e3;
-  --color-light-grey: #c7c7c7;
-  --color-silver: #bfbcbc; /* グレー */
-  --color-middle-grey: #aaa;
-  --color-grey: #7e7e7e;
-  --color-dark-grey: #7c7b7b; /* 濃いグレー */
-  --color-darker-grey: #707070;
+  --color-green: #055818;
+  --color-green-light: #a5d6a7;
+  --color-green-dark: #004c40;
+
+  --color-blue: #1976d2;
+  --color-blue-light: #81d4fa;
+  --color-blue-dark: #004ba0;
+
 
   /* プロジェクト用 */
-  --color-brand-main: #29b6f6;
-  --color-brand-sub1: #0086c3;
-  --color-brand-sub2: #73e8ff;
+  --color-brand-main: #212121;
+  --color-brand-main-light: #484848;
+  --color-brand-main-dark: #000;
+
+  --color-brand-sub1: #37474f;
+  --color-brand-sub1-light: #62727b;
+  --color-brand-sub1-dark: #102027;
+
 
 
   /* =======================================================================
-    フォントサイズ
+    font-size
   ======================================================================= */
 
   /* タイトル */
@@ -66,6 +69,7 @@
   --title-l: 2.4rem;
   --title-xl: 3.2rem;
 
+
   /* テキスト */
   --text-xs: 1rem;
   --text-s: 1.1rem;
@@ -74,18 +78,23 @@
   --text-xl: 1.4rem;
   --text-xxl: 1.5rem;
 
+
   /* font-weight */
   --fontweight-s: 100;
   --fontweight-m: 400;
   --fontweight-l: 700;
 
 
+
+
   /* =======================================================================
-    フォントファミリー
+    font-family
   ======================================================================= */
 
   --yu-gothic: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "Yu Gothic", "Open Sans", "メイリオ", sans-serif;
   --hiragino-gothic: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Verdana, sans-serif;
+
+
 
 
   /* =======================================================================
@@ -95,15 +104,20 @@
   --zindex-behind: -10;
   --zindex-middle: 0;
   --zindex-front: 10;
-  --zindex-pagetopbtn: 30;
+
   --zindex-header: 50;
   --zindex-header-bg: 30;
+  --zindex-pageTop: 30;
+
   --zindex-drawer: 90;
   --zindex-modal: 100;
+  --zindex-bg: 80;
+
+
 
 
   /* =======================================================================
-    コンテンツ横幅
+    Contents Width
   ======================================================================= */
 
   --container-fluid: 100%;
@@ -111,28 +125,35 @@
   --container-static: 100%;
 
 
+
+
   /* =======================================================================
-    アニメーション関係
+    Animation
   ======================================================================= */
 
   --opacity-hover: .6;
-  --transition-default: 350ms ease;/* 一括設定 */
+
+  --transition-default: var(--transitionDuration-default) var(--transitionTimingFunction-default);
   --transitionDuration-fast: 150ms;
   --transitionDuration-default: 350ms;
   --transitionDuration-slow: 600ms;
   --transitionTimingFunction-default: ease;
 
 
+
+
   /* =======================================================================
-    角丸
+    border-radius
   ======================================================================= */
   --borderRadius-small: .5rem;
   --borderRadius-regular: .8rem;
   --borderRadius-large: 1rem;
 
 
+
+
   /* =======================================================================
-    Box-shadow
+    box-shadow
   ======================================================================= */
   --elevation-0: none;
   --elevation-1: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);
@@ -154,7 +175,7 @@
   :root {
 
     /* =======================================================================
-      フォントサイズ
+      font-size
     ======================================================================= */
 
     /* タイトル */
@@ -163,6 +184,7 @@
     --title-m: 2rem;
     --title-l: 2.4rem;
     --title-xl: 2.6rem;
+
 
     /* テキスト */
     --text-xs: .8rem;
@@ -173,8 +195,10 @@
     --text-xxl: 1.3rem;
 
 
+
+
     /* =======================================================================
-      コンテンツ横幅
+      Contents Width
     ======================================================================= */
 
     --container-default: 114rem;

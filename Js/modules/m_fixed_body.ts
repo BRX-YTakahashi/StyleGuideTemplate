@@ -49,7 +49,7 @@ export function bodyFixedOn() {
     )
     : globalVar.bodyElm.style.overflow = "hidden";
 
-    modalStateFlg && globalVar.rootElm.setAttribute("data-bodyfixedstate", "fixed");
+    modalStateFlg && globalVar.rootElm.setAttribute("data-state-fixed-body", "fixed");
   }
 }
 
@@ -74,7 +74,7 @@ export function bodyFixedOff() {
     )
     : globalVar.bodyElm.style.removeProperty("overflow");
 
-    !modalStateFlg && globalVar.rootElm.setAttribute("data-bodyfixedstate", "unfixed");
+    !modalStateFlg && globalVar.rootElm.setAttribute("data-state-fixed-body", "unfixed");
   }
 }
 
