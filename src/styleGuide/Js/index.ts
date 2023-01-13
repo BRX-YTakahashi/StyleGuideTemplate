@@ -515,6 +515,8 @@ outputArea.forEach(e => {
 
   if (attributeVal) {
     if (attributeVal in documentElms) {
+      // ローカルの.mdファイルを読み込む時の処理
+
       const parsedMd = Markdoc.parse(documentElms[attributeVal]);
       const transformedMd = Markdoc.transform(parsedMd);
 
@@ -538,6 +540,18 @@ outputArea.forEach(e => {
           }
         }
       }
+    } else if (attributeVal.includes('github')) {
+      // GitHubにアップしている.mdファイルを読み込むときの処理
+
+      fetch(attributeVal, { mode: "cors" })
+        .then((response) => response.text())
+        .then((data) => {
+          const parsedMd = Markdoc.parse(data);
+          const transformedMd = Markdoc.transform(parsedMd);
+
+          e.innerHTML = Markdoc.renderers.html(transformedMd);
+          e.innerHTML += `<h2>取得元</h2><a href="${attributeVal}" target="_blank">${attributeVal}</a>`;
+        });
     }
   }
 });
