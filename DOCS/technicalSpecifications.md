@@ -258,6 +258,17 @@ GitHubにアップしている`.md`ファイルも読み込めるようにしま
 
 <img width="1237" alt="スクリーンショット 2023-01-13 16 41 59" src="https://user-images.githubusercontent.com/96507904/212265347-8fc85f0e-df5a-4bab-9a54-b1d6e8c339a5.png">
 
+例
+
+```html
+<div class="markdown-body material__button--animate" data-doc-name="コーディングルール">
+  <div class="markdown-output" data-doc-detail="https://raw.githubusercontent.com/BRX-YTakahashi/CodingStyleGuide/main/coding.md"></div>
+  <button type="button" class="markdown__modal-trigger d-md-none">
+    <p class="markdown__modal-trigger-txt"><span class="js-placeholderText"></span>を読む</p>
+  </button>
+</div>
+```
+
 ## 導入済みプラグイン
 
 ### コードハイライター ： [Ryusei Light](https://light.ryuseijs.com/)
