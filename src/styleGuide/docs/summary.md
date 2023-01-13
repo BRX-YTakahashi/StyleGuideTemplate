@@ -28,10 +28,6 @@ CSS変数や、ボタン類等の共通コンポーネントの情報をまと�
 
 ※使用例
 
-### コーディングルール
-
-[こちら](https://github.com/BRX-YTakahashi/CodingStyleGuide/blob/main/coding.md)を参照してください。
-
 ### 各種URL
 
 [TOP_テスト環境](test)\
