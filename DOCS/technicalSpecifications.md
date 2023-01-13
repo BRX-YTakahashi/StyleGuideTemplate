@@ -256,6 +256,8 @@ GitHubにアップしている`.md`ファイルも読み込めるようにしま
 
 手順4で入力する`data-doc-detail`にはGitHubにアップしている`.md`ファイルの**RAWのURL**を設定してください。
 
+<img width="1237" alt="スクリーンショット 2023-01-13 16 41 59" src="https://user-images.githubusercontent.com/96507904/212265347-8fc85f0e-df5a-4bab-9a54-b1d6e8c339a5.png">
+
 ## 導入済みプラグイン
 
 ### コードハイライター ： [Ryusei Light](https://light.ryuseijs.com/)
