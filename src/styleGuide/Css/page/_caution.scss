@@ -197,7 +197,7 @@
   color: var(--color-attention);
 
   @include mixin.mqP(lg) {
-    padding: var(--spacer_vertical-small);
+    padding: var(--spacer-vertical-small);
     box-shadow: none;
     overflow: hidden;
     font-size: 1.5rem;
@@ -206,7 +206,7 @@
   }
 
   @include mixin.mq(lg) {
-    padding: var(--spacer_vertical-medium);
+    padding: var(--spacer-vertical-medium);
     font-size: 2rem;
     line-height: 1.75;
     letter-spacing: .02em;
@@ -222,21 +222,23 @@
   }
 
   .caution-txt__list {
-    margin-top: var(--spacer_vertical-small);
-    padding-left: calc(var(--spacer_vertical-small) + 1ch);
+    margin-top: var(--spacer-vertical-small);
+    padding-left: calc(var(--spacer-vertical-small) + 1ch);
     list-style-type: disc;
     list-style-position: outside;
+
+    word-break: break-all;
 
     @include mixin.mqP(lg) {
     }
 
     @include mixin.mq(lg) {
-      padding-right: var(--spacer_vertical-small);
+      padding-right: var(--spacer-vertical-small);
     }
 
     &-item {
       @include mixin.hover {
-        list-style-type: '🫠';
+        list-style-type: '👹';
 
         @include mixin.theme(dark) {
           filter: invert(1);

@@ -109,7 +109,7 @@
   transition-timing-function: var(--transitionTimingFunction-default);
 
   @include mixin.theme(dark) {
-    background: var(--color_bg-moreLighter);
+    background: var(--color-bg-moreLighter);
   }
 
   @include mixin.mqP(lg) {
@@ -134,7 +134,7 @@
     user-select: none;
 
     // @include mixin.theme(dark) {
-    //   background: var(--color_bg-moreLighter);
+    //   background: var(--color-bg-moreLighter);
     // }
   }
 

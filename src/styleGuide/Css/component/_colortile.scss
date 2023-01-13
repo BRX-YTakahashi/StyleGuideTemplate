@@ -27,7 +27,7 @@
 
 .color-tiles {
   &--variation {
-    // padding-left: var(--spacer_vertical-xsmall);
+    // padding-left: var(--spacer-vertical-xsmall);
 
     .annotation {
       display: block;
@@ -41,10 +41,10 @@
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    padding: 0 var(--spacer_vertical-xsmall);
+    padding: 0 var(--spacer-vertical-xsmall);
 
     @include mixin.mqP(lg) {
-      gap: var(--spacer_vertical-small);
+      gap: var(--spacer-vertical-small);
 
       & > copy-color {
         width: 100%;
@@ -52,7 +52,7 @@
     }
 
     @include mixin.mq(lg) {
-      gap: var(--spacer_vertical-small) calc((100% - (22% * 4)) / 3);
+      gap: var(--spacer-vertical-small) calc((100% - (22% * 4)) / 3);
 
       & > copy-color {
         width: 22%;

@@ -23,40 +23,40 @@
   * CSS Variables for StyleGuide *
 =============================================== */
 :root {
-  --color_bg-primary: #fefefe;
-  --color_bg-darker: #c5c5c5;
-  --color_bg-lighter: #f8f8f8;
+  --color-bg-primary: #fefefe;
+  --color-bg-darker: #c5c5c5;
+  --color-bg-lighter: #f8f8f8;
 
-  --color-category-welcome: #000;
+  --color-category-welcome: var(--color-brand-main);
   --color-category-rule: #e25858;
   --color-category-design: #82c784;
   --color-category-code: #1976d2;
 
   @include mixin.mqP(lg) {
-    --spacer_vertical-xsmall: 1.25vh;
-    --spacer_vertical-small: 2.5vh;
-    --spacer_vertical-medium: 5vh;
-    --spacer_vertical-large: 7.5vh;
-    --spacer_vertical-xlarge: 10vh;
+    --spacer-vertical-xsmall: 1.25vh;
+    --spacer-vertical-small: 2.5vh;
+    --spacer-vertical-medium: 5vh;
+    --spacer-vertical-large: 7.5vh;
+    --spacer-vertical-xlarge: 10vh;
 
     --pageTitle-height: 6vh;
   }
 
   @include mixin.mq(lg) {
-    --spacer_vertical-xsmall: 1.25vh;
-    --spacer_vertical-small: 2.5vh;
-    --spacer_vertical-medium: 5vh;
-    --spacer_vertical-large: 7.5vh;
-    --spacer_vertical-xlarge: 10vh;
+    --spacer-vertical-xsmall: 1.25vh;
+    --spacer-vertical-small: 2.5vh;
+    --spacer-vertical-medium: 5vh;
+    --spacer-vertical-large: 7.5vh;
+    --spacer-vertical-xlarge: 10vh;
 
     --pageTitle-height: 5vh;
   }
 
   @include mixin.theme(dark) {
-    --color_bg-primary: #212121;
-    --color_bg-darker: #000000;
-    --color_bg-lighter: #484848;
-    --color_bg-moreLighter: #737373;
+    --color-bg-primary: #212121;
+    --color-bg-darker: #000000;
+    --color-bg-lighter: #484848;
+    --color-bg-moreLighter: #737373;
   }
 }
 
@@ -84,7 +84,7 @@ html {
     visibility: visible;
   }
 
-  &[data-bodyfixedstate="fixed"] {
+  &[data-state-fixed-body="fixed"] {
     scroll-behavior: initial;
 
     @include mixin.mqP(lg) {
@@ -136,7 +136,7 @@ html {
   }
 
   @include mixin.theme(dark) {
-    background: var(--color_bg-primary);
+    background: var(--color-bg-primary);
   }
 }
 
@@ -200,7 +200,7 @@ body {
 
 .title-txt {
   padding-bottom: 1rem;
-  border-bottom: 2px solid var(--color-dark-grey);
+  border-bottom: 2px solid var(--color-grey-lighter);
   letter-spacing: 0.05em;
 
   .annotation {
@@ -225,7 +225,7 @@ body {
   }
 
   &--child {
-    margin-bottom: var(--spacer_vertical-small);
+    margin-bottom: var(--spacer-vertical-small);
     border-bottom-width: 1px;
     font-style: normal;
 
@@ -273,31 +273,33 @@ body {
 
 .annotation {
   &--xs {
+    margin-left: 1ch;
     font-size: 0.5em;
   }
   &--s {
+    margin-left: 2ch;
     font-size: .7em;
   }
 
   &--grey {
-    color: var(--color-middle-grey);
+    color: var(--color-grey);
   }
 }
 
 .desc-txt {
   display: block;
-  padding-left: var(--spacer_vertical-xsmall);
+  padding-left: var(--spacer-vertical-xsmall);
   font-size: 1.6rem;
   line-height: 1.5;
-  margin-bottom: var(--spacer_vertical-xsmall);
+  margin-bottom: var(--spacer-vertical-xsmall);
 }
 
 
 /* structure */
 .main-area {
-  padding-bottom: var(--spacer_vertical-medium);
+  padding-bottom: var(--spacer-vertical-medium);
 
-  background-color: var(--color_bg-primary);
+  background-color: var(--color-bg-primary);
   transition-property: background;
   transition-duration: var(--transitionDuration-default);
   transition-timing-function: var(--transitionTimingFunction-default);
@@ -311,7 +313,7 @@ body {
 
 .article-wrapper {
   @include mixin.mqP(lg) {
-    padding: var(--spacer_vertical-small) calc(var(--spacer_vertical-small) / 2);
+    padding: var(--spacer-vertical-small) calc(var(--spacer-vertical-small) / 2);
 
     // for documentReader
     transform: translateZ(0rem);
@@ -326,7 +328,7 @@ body {
     justify-content: space-between;
     max-width: 1400px;
     margin: auto;
-    padding-top: var(--spacer_vertical-medium);
+    padding-top: var(--spacer-vertical-medium);
   }
 }
 
@@ -339,16 +341,16 @@ body {
     visibility: visible;
 
     @include mixin.mq(lg) {
-      padding: var(--spacer_vertical-medium);
+      padding: var(--spacer-vertical-medium);
     }
   }
 
   & > :not(:last-child) {//.section-style
     @include mixin.mqP(lg) {
-      margin-bottom: var(--spacer_vertical-medium);
+      margin-bottom: var(--spacer-vertical-medium);
     }
     @include mixin.mq(lg) {
-      margin-bottom: var(--spacer_vertical-large);
+      margin-bottom: var(--spacer-vertical-large);
     }
   }
 
@@ -357,8 +359,8 @@ body {
       width: 85%;
     }
 
-    background: var(--color_bg-lighter);
-    border: solid 1px var(--color-very-light-grey);
+    background: var(--color-bg-lighter);
+    border: solid 1px var(--color-grey-lighter);
     border-radius: 0 var(--borderRadius-large) var(--borderRadius-large) var(--borderRadius-large);
     // box-shadow: var(--elevation-2);
 
@@ -370,12 +372,12 @@ body {
 
 .section-style {
   & > h2 {
-    margin-bottom: var(--spacer_vertical-small);
+    margin-bottom: var(--spacer-vertical-small);
     font-weight: var(--fontweight-l);
   }
 
   & > p.desc-txt:last-of-type {
-    margin-bottom: var(--spacer_vertical-small);
+    margin-bottom: var(--spacer-vertical-small);
   }
 
   & > :last-child {
@@ -383,23 +385,23 @@ body {
   }
 
   @include mixin.mqP(lg) {
-    /* padding: calc(var(--spacer_vertical-small) / 2); */
-    padding: var(--spacer_vertical-small);
-    background: var(--color_bg-lighter);
+    /* padding: calc(var(--spacer-vertical-small) / 2); */
+    padding: var(--spacer-vertical-small);
+    background: var(--color-bg-lighter);
     border-radius: var(--borderRadius-large);
     box-shadow: var(--elevation-2);
   }
 }
 
 .content-wrapper {
-  margin-bottom: var(--spacer_vertical-medium);
+  margin-bottom: var(--spacer-vertical-medium);
 }
 
 .credit-area {
   padding-top: 2ch;
   padding-right: 2ch;
   padding-bottom: 2ch;
-  background-color: var(--color-dark-grey);
+  background-color: var(--color-brand-main-light);
   text-align: right;
 }
 
@@ -438,11 +440,11 @@ html:not([data-mode="prank"]) {
     .article-wrapper {
       max-width: none;
       padding-top: 0;
-      border-bottom: solid 1px var(--color-very-light-grey);
+      border-bottom: solid 1px var(--color-grey-lighter);
     }
 
     .page-index {
-      background-color: var(--color_bg-lighter);
+      background-color: var(--color-bg-lighter);
     }
 
     .page-index__list {
@@ -460,7 +462,7 @@ html:not([data-mode="prank"]) {
       border: none;
 
       &__container {
-        border-left: solid 1px var(--color-very-light-grey);
+        border-left: solid 1px var(--color-grey-lighter);
       }
     }
   }

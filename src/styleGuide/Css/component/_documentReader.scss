@@ -28,7 +28,7 @@
   z-index: var(--zindex-modal);
 
   width: 100%;
-  background-color: var(--color_bg-primary);
+  background-color: var(--color-bg-primary);
   border-radius: var(--borderRadius-large) var(--borderRadius-large) 0 0;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -46,7 +46,7 @@
         top: 0;
 
         padding: 2vw;
-        background: var(--color_bg-primary);
+        background: var(--color-bg-primary);
         box-shadow: var(--elevation-2);
 
         transition-property: box-shadow, transform;
@@ -93,12 +93,12 @@
         transform: rotate(90deg);
 
         // path {
-        //   fill: var(--color_bg-primary);
+        //   fill: var(--color-bg-primary);
         // }
 
         @include mixin.theme(dark) {
           path {
-            fill: var(--color_bg-white);
+            fill: var(--color-bg-white);
           }
         }
       }

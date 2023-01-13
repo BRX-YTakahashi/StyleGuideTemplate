@@ -129,9 +129,9 @@
   line-height: 1.5;
   word-wrap: break-word;
 
-  border: solid 1px var(--color-very-light-grey);
+  border: solid 1px var(--color-grey-lighter);
   border-radius: var(--borderRadius-regular);
-  padding: var(--spacer_vertical-small);
+  padding: var(--spacer-vertical-small);
 
   @include mixin.mqP(lg) {
     &.material__button--animate {

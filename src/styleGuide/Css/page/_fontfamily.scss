@@ -21,13 +21,13 @@
 .font-family__list {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 var(--spacer_vertical-xsmall);
+  padding: 0 var(--spacer-vertical-xsmall);
 
   @include mixin.mqP(lg) {
-    gap: var(--spacer_vertical-small) 0;
+    gap: var(--spacer-vertical-small) 0;
   }
   @include mixin.mq(lg) {
-    gap: var(--spacer_vertical-small) 5%;
+    gap: var(--spacer-vertical-small) 5%;
   }
 
   &-item {

@@ -98,7 +98,7 @@
   font-family: variable.$code-ff;
 
   & > * {
-    border: solid 1px var(--color-very-light-grey);
+    border: solid 1px var(--color-grey-lighter);
     border-radius: var(--borderRadius-regular);
     overflow: hidden;
   }

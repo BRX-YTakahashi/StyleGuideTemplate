@@ -67,10 +67,10 @@
   &:not(.page-index__list--child) {
     @include mixin.mq(lg) {
       position: sticky;
-      // top: var(--spacer_vertical-medium);
-      top: calc(var(--pageTitle-height) + var(--spacer_vertical-medium));
+      // top: var(--spacer-vertical-medium);
+      top: calc(var(--pageTitle-height) + var(--spacer-vertical-medium));
 
-      border: solid 1px var(--color-very-light-grey);
+      border: solid 1px var(--color-grey-lighter);
       border-right: none;
       border-radius: var(--borderRadius-large) 0 0 var(--borderRadius-large);
       // box-shadow: -4px 6px 10px var(--color-light-grey);
@@ -105,7 +105,7 @@
     &[data-index="inactive"] {
       .page-index__list-item__link {
         @include mixin.hover {
-          background-color: var(--color-very-light-grey);
+          background-color: var(--color-grey-lighter);
         }
       }
 
