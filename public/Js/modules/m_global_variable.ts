@@ -64,6 +64,10 @@ export const iOS: boolean = userAgent.indexOf("iphone") > -1 || userAgent.indexO
  */
 export const Android: boolean = userAgent.indexOf("android") > -1 && "ontouchend" in document;
 
+
+/** @type {boolean} detectSmartPhoneFlg スマートフォンかどうかを判別するフラグ */
+export const detectSmartPhoneFlg = iOS || Android;
+
 /**
  * デフォルトのアニメーション速度.
  *
@@ -73,19 +77,6 @@ export const Android: boolean = userAgent.indexOf("android") > -1 && "ontouchend
  * @type {number} [undefined] 変数が存在しない場合、300を代入。
  */
 export const defaultAnimationSpeed: number = getComputedStyle(document.documentElement).getPropertyValue("--transitionDuration-default") ? Number(getComputedStyle(document.documentElement).getPropertyValue("--transitionDuration-default").replace("ms", "")) : 300;
-
-
-/* ===============================================
-  * DOMツリー構築後に値を再代入する *
-  TODO: type="module"で読み込むので、ここの処理は必要ないかも
-=============================================== */
-
-document.addEventListener("DOMContentLoaded", function() {
-  rootElm = document.querySelector<HTMLElement>("html");
-  bodyElm = document.querySelector<HTMLElement>("body");
-  screenWidth = window.innerWidth;
-  screenHeight = window.innerHeight;
-});
 
 
 /* ===============================================
