@@ -119,8 +119,6 @@
 {{> header}}
 
 
-
-
 <main class="main-area">
 
   <h1 class="page-title"><span class="page-title__inner">Style Guide Template</span></h1>
@@ -130,7 +128,7 @@
     <!-- ===============================================
       * 目次 *
     =============================================== -->
-    {{> pageIndex}}
+    {{> module/pageIndex}}
 
 
     <!-- ===============================================
@@ -140,25 +138,25 @@
       <!--
         contents: WELCOME
       -->
-      {{> article_welcome}}
+      {{> article/article_welcome}}
 
 
       <!--
         contents: RULE
       -->
-      {{> article_rule}}
+      {{> article/article_rule}}
 
 
       <!--
         contents: DESIGN
       -->
-      {{> article_design}}
+      {{> article/article_design}}
 
 
       <!--
         contents: CODE
       -->
-      {{> article_code}}
+      {{> article/article_code}}
     </div>
   </article>
 
@@ -166,24 +164,18 @@
   <!-- ===============================================
     * CATEGORY Switch tab *
   =============================================== -->
-  {{> categoryTab}}
+  {{> module/categoryTab}}
 
 </main>
 
 
+{{> module/footer}}
 
-
-{{> footer}}
-
-
-
-
-<!-- MEMO: モーダルやトースト等は、ここから下に設置してください↓ -->
 
 <!-- ===============================================
   * Reader *
 =============================================== -->
-{{> documentReader}}
+{{> module/documentReader}}
 
 
 <!-- ===============================================
