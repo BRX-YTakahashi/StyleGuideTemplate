@@ -1,18 +1,18 @@
 @charset "UTF-8";
-@use "../../../Css/foundation/function" as function;
-@use "../../../Css/foundation/mixin" as mixin;
-@use "../../../Css/foundation/variable" as variable;
+@use "../../../Css/foundation/function" as f;
+@use "../../../Css/foundation/mixin" as m;
+@use "../../../Css/foundation/variable" as v;
 
 
 /* ===============================================
   * section-style--color *
 =============================================== */
-@include mixin.mqP(lg) {
+@include m.mqP(lg) {
   /* ===============================================
     * section-style--color *
   =============================================== */
 }
-@include mixin.mq(lg) {
+@include m.mq(lg) {
   /* ===============================================
     * section-style--color *
   =============================================== */
@@ -43,7 +43,7 @@
     margin-left: auto;
     padding: 0 var(--spacer-vertical-xsmall);
 
-    @include mixin.mqP(lg) {
+    @include m.mqP(lg) {
       gap: var(--spacer-vertical-small);
 
       & > copy-color {
@@ -51,7 +51,7 @@
       }
     }
 
-    @include mixin.mq(lg) {
+    @include m.mq(lg) {
       gap: var(--spacer-vertical-small) calc((100% - (22% * 4)) / 3);
 
       & > copy-color {
@@ -73,11 +73,11 @@
     font-weight: var(--fontweight-s);
     letter-spacing: .1em;
 
-    @include mixin.mqP(lg) {
+    @include m.mqP(lg) {
       line-height: 4.5;
     }
 
-    @include mixin.mq(lg) {
+    @include m.mq(lg) {
       aspect-ratio: 1;
     }
   }

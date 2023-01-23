@@ -1,17 +1,17 @@
 @charset "UTF-8";
-@use "../../../Css/foundation/function" as function;
-@use "../../../Css/foundation/mixin" as mixin;
-@use "../../../Css/foundation/variable" as variable;
+@use "../../../Css/foundation/function" as f;
+@use "../../../Css/foundation/mixin" as m;
+@use "../../../Css/foundation/variable" as v;
 
 /* ===============================================
   * MARKDOWN *
 =============================================== */
-@include mixin.mqP(lg) {
+@include m.mqP(lg) {
   /* ===============================================
     * MARKDOWN *
   =============================================== */
 }
-@include mixin.mq(lg) {
+@include m.mq(lg) {
   /* ===============================================
     * MARKDOWN *
   =============================================== */
@@ -124,7 +124,7 @@
   color: var(--color-fg-default);
   background-color: var(--color-canvas-default);
   // font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-  font-family: variable.$base-ff;
+  font-family: v.$base-ff;
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
@@ -133,7 +133,7 @@
   border-radius: var(--borderRadius-regular);
   padding: var(--spacer-vertical-small);
 
-  @include mixin.mqP(lg) {
+  @include m.mqP(lg) {
     &.material__button--animate {
       box-shadow: var(--elevation-0);
 
@@ -143,7 +143,7 @@
     }
   }
 
-  @include mixin.theme(dark) {
+  @include m.theme(dark) {
     background-color: var(--color-bg-primary);
   }
 }
@@ -253,7 +253,7 @@
 .markdown-body pre,
 .markdown-body samp {
   // font-family: monospace,monospace;
-  font-family: variable.$code-ff;
+  font-family: v.$code-ff;
   font-size: 1em;
 }
 
@@ -469,7 +469,7 @@
 .markdown-body tt,
 .markdown-body code {
   // font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
-  font-family: variable.$code-ff;
+  font-family: v.$code-ff;
   font-size: 12px;
 }
 
@@ -477,7 +477,7 @@
   margin-top: 0;
   margin-bottom: 0;
   // font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
-  font-family: variable.$code-ff;
+  font-family: v.$code-ff;
   font-size: 12px;
   word-wrap: normal;
 }
@@ -1094,7 +1094,7 @@
 }
 
 
-@include mixin.mqP(lg) {
+@include m.mqP(lg) {
   .markdown-body {
     height: 10vh;
 

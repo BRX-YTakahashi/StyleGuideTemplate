@@ -1,18 +1,18 @@
 @charset "UTF-8";
-@use "../../../Css/foundation/function" as function;
-@use "../../../Css/foundation/mixin" as mixin;
-@use "../../../Css/foundation/variable" as variable;
+@use "../../../Css/foundation/function" as f;
+@use "../../../Css/foundation/mixin" as m;
+@use "../../../Css/foundation/variable" as v;
 
 
 /* ===============================================
   * document reader *
 =============================================== */
-@include mixin.mqP(lg) {
+@include m.mqP(lg) {
   /* ===============================================
     * document reader *
   =============================================== */
 }
-@include mixin.mq(lg) {
+@include m.mq(lg) {
   /* ===============================================
     * document reader *
   =============================================== */
@@ -77,14 +77,14 @@
         transition-duration: var(--transitionDuration-fast);
         transition-timing-function: var(--transitionTimingFunction-default);
 
-        @include mixin.theme(dark) {
+        @include m.theme(dark) {
           box-shadow: none;
         }
       }
     }
 
     &--top {
-      @include mixin.flex(0, center, center, 0, 0);
+      @include m.flex(0, center, center, 0, 0);
 
       width: 100%;
       height: 4vh;
@@ -96,7 +96,7 @@
         //   fill: var(--color-bg-primary);
         // }
 
-        @include mixin.theme(dark) {
+        @include m.theme(dark) {
           path {
             fill: var(--color-bg-white);
           }

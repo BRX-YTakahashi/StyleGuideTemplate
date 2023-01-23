@@ -1,18 +1,18 @@
 @charset "UTF-8";
-@use "../../../Css/foundation/function" as function;
-@use "../../../Css/foundation/mixin" as mixin;
-@use "../../../Css/foundation/variable" as variable;
+@use "../../../Css/foundation/function" as f;
+@use "../../../Css/foundation/mixin" as m;
+@use "../../../Css/foundation/variable" as v;
 
 
 /* ===============================================
   * BASE STYLE *
 =============================================== */
-@include mixin.mqP(lg) {
+@include m.mqP(lg) {
   /* ===============================================
     * BASE STYLE *
   =============================================== */
 }
-@include mixin.mq(lg) {
+@include m.mq(lg) {
   /* ===============================================
     * BASE STYLE *
   =============================================== */
@@ -32,7 +32,7 @@
   --color-category-design: #82c784;
   --color-category-code: #1976d2;
 
-  @include mixin.mqP(lg) {
+  @include m.mqP(lg) {
     --spacer-vertical-xsmall: 1.25vh;
     --spacer-vertical-small: 2.5vh;
     --spacer-vertical-medium: 5vh;
@@ -42,7 +42,7 @@
     --pageTitle-height: 6vh;
   }
 
-  @include mixin.mq(lg) {
+  @include m.mq(lg) {
     --spacer-vertical-xsmall: 1.25vh;
     --spacer-vertical-small: 2.5vh;
     --spacer-vertical-medium: 5vh;
@@ -52,7 +52,7 @@
     --pageTitle-height: 5vh;
   }
 
-  @include mixin.theme(dark) {
+  @include m.theme(dark) {
     --color-bg-primary: #212121;
     --color-bg-darker: #000000;
     --color-bg-lighter: #484848;
@@ -70,7 +70,7 @@
 
 html {
   font-size: 62.5%;
-  font-family: variable.$base-ff;
+  font-family: v.$base-ff;
 
   // scroll-behavior: smooth;
   scroll-padding-top: 10vh;
@@ -87,9 +87,9 @@ html {
   &[data-state-fixed-body="fixed"] {
     scroll-behavior: initial;
 
-    @include mixin.mqP(lg) {
+    @include m.mqP(lg) {
       // for documentReader
-      .article-wrapper {
+      .article__wrapper {
         transform: translateZ(-.75rem);
       }
     }
@@ -123,7 +123,7 @@ html {
     }
   }
 
-  @include mixin.theme(dark) {
+  @include m.theme(dark) {
     background: var(--color-bg-primary);
   }
 }
@@ -143,7 +143,7 @@ body {
 // }
 
 /* text */
-.title-txt {
+.title__text {
   padding-bottom: 1rem;
   border-bottom: 2px solid var(--color-grey-lighter);
   letter-spacing: 0.05em;
@@ -152,7 +152,7 @@ body {
     letter-spacing: normal;
 
     &--grey {
-      @include mixin.mqP(lg) {
+      @include m.mqP(lg) {
         display: block;
         line-height: 1.5;
         text-indent: 2ch;
@@ -160,11 +160,11 @@ body {
     }
   }
 
-  @include mixin.mqP(lg) {
+  @include m.mqP(lg) {
     font-size: var(--title-m);
   }
 
-  @include mixin.mq(lg) {
+  @include m.mq(lg) {
     font-size: var(--title-xl);
     text-indent: 1ch;
   }
@@ -174,11 +174,11 @@ body {
     border-bottom-width: 1px;
     font-style: normal;
 
-    @include mixin.mqP(lg) {
+    @include m.mqP(lg) {
       font-size: var(--title-s);
     }
 
-    @include mixin.mq(lg) {
+    @include m.mq(lg) {
       font-size: var(--title-m);
     }
   }
@@ -205,7 +205,7 @@ body {
     transition-timing-function: ease-in;
   }
 
-  @include mixin.hover {
+  @include m.hover {
     &::after {
       width: 100%;
     }
@@ -231,7 +231,7 @@ body {
   }
 }
 
-.desc-txt {
+.description__text {
   display: block;
   padding-left: var(--spacer-vertical-xsmall);
   font-size: 1.6rem;
@@ -250,15 +250,15 @@ body {
   transition-duration: var(--transitionDuration-default);
   transition-timing-function: var(--transitionTimingFunction-default);
 
-  @include mixin.mqP(lg) {
+  @include m.mqP(lg) {
     // for documentReader
     perspective: 5rem;
     perspective-origin: top;
   }
 }
 
-.article-wrapper {
-  @include mixin.mqP(lg) {
+.article__wrapper {
+  @include m.mqP(lg) {
     padding: var(--spacer-vertical-small) calc(var(--spacer-vertical-small) / 2);
 
     // for documentReader
@@ -268,7 +268,7 @@ body {
     transition-timing-function: var(--transitionTimingFunction-default);
   }
 
-  @include mixin.mq(lg) {
+  @include m.mq(lg) {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -286,21 +286,21 @@ body {
     opacity: 1;
     visibility: visible;
 
-    @include mixin.mq(lg) {
+    @include m.mq(lg) {
       padding: var(--spacer-vertical-medium);
     }
   }
 
   & > :not(:last-child) {//.section-style
-    @include mixin.mqP(lg) {
+    @include m.mqP(lg) {
       margin-bottom: var(--spacer-vertical-medium);
     }
-    @include mixin.mq(lg) {
+    @include m.mq(lg) {
       margin-bottom: var(--spacer-vertical-large);
     }
   }
 
-  @include mixin.mq(lg) {
+  @include m.mq(lg) {
     &__container {
       width: 85%;
     }
@@ -310,7 +310,7 @@ body {
     border-radius: 0 var(--borderRadius-large) var(--borderRadius-large) var(--borderRadius-large);
     // box-shadow: var(--elevation-2);
 
-    @include mixin.theme(dark) {
+    @include m.theme(dark) {
       box-shadow: none;
     }
   }
@@ -322,7 +322,7 @@ body {
     font-weight: var(--fontweight-l);
   }
 
-  & > p.desc-txt:last-of-type {
+  & > p.description__text:last-of-type {
     margin-bottom: var(--spacer-vertical-small);
   }
 
@@ -330,7 +330,7 @@ body {
     margin-bottom: 0;
   }
 
-  @include mixin.mqP(lg) {
+  @include m.mqP(lg) {
     /* padding: calc(var(--spacer-vertical-small) / 2); */
     padding: var(--spacer-vertical-small);
     background: var(--color-bg-lighter);
@@ -339,7 +339,7 @@ body {
   }
 }
 
-.content-wrapper {
+.content__wrapper {
   margin-bottom: var(--spacer-vertical-medium);
 }
 
@@ -354,7 +354,7 @@ body {
 
 /* animation */
 .material__button--animate {
-  @include mixin.hover {
+  @include m.hover {
     transition-property: box-shadow;
     transition-duration: var(--transitionDuration-default);
     transition-timing-function: var(--transitionTimingFunction-default);
@@ -376,14 +376,14 @@ html:not([data-mode="prank"]) {
 
 
 // TODO: 試験実装！！
-@include mixin.mq(lg) {
+@include m.mq(lg) {
   main.main-area {
     .page-title__inner {
       max-width: none;
       text-indent: 4ch;
     }
 
-    .article-wrapper {
+    .article__wrapper {
       max-width: none;
       padding-top: 0;
       border-bottom: solid 1px var(--color-grey-lighter);

@@ -1,18 +1,18 @@
 @charset "UTF-8";
-@use "../../../Css/foundation/function" as function;
-@use "../../../Css/foundation/mixin" as mixin;
-@use "../../../Css/foundation/variable" as variable;
+@use "../../../Css/foundation/function" as f;
+@use "../../../Css/foundation/mixin" as m;
+@use "../../../Css/foundation/variable" as v;
 
 
 /* ===============================================
   * caution-area *
 =============================================== */
-@include mixin.mqP(lg) {
+@include m.mqP(lg) {
   /* ===============================================
     * caution-area *
   =============================================== */
 }
-@include mixin.mq(lg) {
+@include m.mq(lg) {
   /* ===============================================
     * caution-area *
   =============================================== */
@@ -196,7 +196,7 @@
   border-radius: 1rem;
   color: var(--color-attention);
 
-  @include mixin.mqP(lg) {
+  @include m.mqP(lg) {
     padding: var(--spacer-vertical-small);
     box-shadow: none;
     overflow: hidden;
@@ -205,14 +205,14 @@
     letter-spacing: .01em;
   }
 
-  @include mixin.mq(lg) {
+  @include m.mq(lg) {
     padding: var(--spacer-vertical-medium);
     font-size: 2rem;
     line-height: 1.75;
     letter-spacing: .02em;
   }
 
-  .title-txt {
+  .title__text {
     text-align: center;
     text-indent: 0;
 
@@ -229,18 +229,18 @@
 
     word-break: break-all;
 
-    @include mixin.mqP(lg) {
+    @include m.mqP(lg) {
     }
 
-    @include mixin.mq(lg) {
+    @include m.mq(lg) {
       padding-right: var(--spacer-vertical-small);
     }
 
     &-item {
-      @include mixin.hover {
+      @include m.hover {
         list-style-type: '👹';
 
-        @include mixin.theme(dark) {
+        @include m.theme(dark) {
           filter: invert(1);
         }
       }
@@ -266,7 +266,7 @@
     animation: 3s linear infinite movinmovin;
   }
 
-  @include mixin.hover {
+  @include m.hover {
     animation:
       .5s linear infinite infiniteRotate,
       1s linear infinite rainbow;
@@ -280,7 +280,7 @@
     }
   }
 }
-.title-txt > span:nth-of-type(2) {
+.title__text > span:nth-of-type(2) {
   animation-delay: 200ms;
 }
 

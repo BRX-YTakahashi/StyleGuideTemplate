@@ -1,31 +1,31 @@
 @charset "UTF-8";
-@use "../../../Css/foundation/function" as function;
-@use "../../../Css/foundation/mixin" as mixin;
-@use "../../../Css/foundation/variable" as variable;
+@use "../../../Css/foundation/function" as f;
+@use "../../../Css/foundation/mixin" as m;
+@use "../../../Css/foundation/variable" as v;
 
 
 /* ===============================================
   * section-style--buttons *
 =============================================== */
-@include mixin.mqP(lg) {
+@include m.mqP(lg) {
   /* ===============================================
     * section-style--buttons *
   =============================================== */
 }
-@include mixin.mq(lg) {
+@include m.mq(lg) {
   /* ===============================================
     * section-style--buttons *
   =============================================== */
 }
 
 
-@include mixin.mq(lg) {
+@include m.mq(lg) {
   .section-style--buttons {
     .annotation {
       display: inline;
     }
 
-    .button__list .title-txt {
+    .button__list .title__text {
       width: 100%;
     }
 

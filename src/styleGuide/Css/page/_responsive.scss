@@ -1,17 +1,17 @@
 @charset "UTF-8";
-@use "../../../Css/foundation/function" as function;
-@use "../../../Css/foundation/mixin" as mixin;
-@use "../../../Css/foundation/variable" as variable;
+@use "../../../Css/foundation/function" as f;
+@use "../../../Css/foundation/mixin" as m;
+@use "../../../Css/foundation/variable" as v;
 
 /* ===============================================
   * section-style--responsive *
 =============================================== */
-@include mixin.mqP(lg) {
+@include m.mqP(lg) {
   /* ===============================================
     * section-style--responsive *
   =============================================== */
 }
-@include mixin.mq(lg) {
+@include m.mq(lg) {
   /* ===============================================
     * section-style--responsive *
   =============================================== */
@@ -19,7 +19,7 @@
 
 .section-style--responsive {
   .responsive-utility {
-    .title-txt {
+    .title__text {
       margin-left: 2%;
       padding-left: 1%;
       font-size: 1.25em;
@@ -76,7 +76,7 @@
 }
 
 
-@include mixin.mq(lg) {
+@include m.mq(lg) {
   .section-style--responsive {
     .responsive-utility .img__wrapper {
       width: 73rem;

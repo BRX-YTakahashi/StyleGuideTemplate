@@ -1,17 +1,17 @@
 @charset "UTF-8";
-@use "../../../Css/foundation/function" as function;
-@use "../../../Css/foundation/mixin" as mixin;
-@use "../../../Css/foundation/variable" as variable;
+@use "../../../Css/foundation/function" as f;
+@use "../../../Css/foundation/mixin" as m;
+@use "../../../Css/foundation/variable" as v;
 
 /* ===============================================
   * section-style--font-family *
 =============================================== */
-@include mixin.mqP(lg) {
+@include m.mqP(lg) {
   /* ===============================================
     * section-style--font-family *
   =============================================== */
 }
-@include mixin.mq(lg) {
+@include m.mq(lg) {
   /* ===============================================
     * section-style--font-family *
   =============================================== */
@@ -23,10 +23,10 @@
   flex-wrap: wrap;
   padding: 0 var(--spacer-vertical-xsmall);
 
-  @include mixin.mqP(lg) {
+  @include m.mqP(lg) {
     gap: var(--spacer-vertical-small) 0;
   }
-  @include mixin.mq(lg) {
+  @include m.mq(lg) {
     gap: var(--spacer-vertical-small) 5%;
   }
 
@@ -36,11 +36,11 @@
     letter-spacing: 0.05em;
     line-height: 2;
 
-    @include mixin.mqP(lg) {
+    @include m.mqP(lg) {
       width: 100%;
     }
 
-    @include mixin.mq(lg) {
+    @include m.mq(lg) {
       width: 47.5%;
     }
   }

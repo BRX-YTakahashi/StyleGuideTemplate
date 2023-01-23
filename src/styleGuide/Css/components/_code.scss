@@ -1,18 +1,18 @@
 @charset "UTF-8";
-@use "../../../Css/foundation/function" as function;
-@use "../../../Css/foundation/mixin" as mixin;
-@use "../../../Css/foundation/variable" as variable;
+@use "../../../Css/foundation/function" as f;
+@use "../../../Css/foundation/mixin" as m;
+@use "../../../Css/foundation/variable" as v;
 
 
 /* ===============================================
   * コード関連のスタイル *
 =============================================== */
-@include mixin.mqP(lg) {
+@include m.mqP(lg) {
   /* ===============================================
     * コード関連のスタイル *
   =============================================== */
 }
-@include mixin.mq(lg) {
+@include m.mq(lg) {
   /* ===============================================
     * コード関連のスタイル *
   =============================================== */
@@ -32,7 +32,7 @@
   border-radius: var(--borderRadius-small);
   color: var(--color-primary);
   // font-family: inherit;
-  font-family: variable.$code-ff;
+  font-family: v.$code-ff;
   font-size: 1.2rem;
   font-weight: var(--fontweight-m);
   // letter-spacing: 0.05em;
@@ -51,7 +51,7 @@
     transition-timing-function: var(--transitionTimingFunction-default);
   }
 
-  @include mixin.mqP(lg) {
+  @include m.mqP(lg) {
     &:active {
       border-color: transparent;
       // box-shadow: var(--elevation-4);
@@ -63,8 +63,8 @@
     }
   }
 
-  @include mixin.mq(lg) {
-    @include mixin.hover {
+  @include m.mq(lg) {
+    @include m.hover {
       background: var(--color-silver-white);
       border-color: transparent;
       // box-shadow:  9px 9px 18px #cbcbcb, -9px -9px 18px #ffffff;
@@ -95,7 +95,7 @@
 
 /* style of code highlighter */
 .code-preview {
-  font-family: variable.$code-ff;
+  font-family: v.$code-ff;
 
   & > * {
     border: solid 1px var(--color-grey-lighter);

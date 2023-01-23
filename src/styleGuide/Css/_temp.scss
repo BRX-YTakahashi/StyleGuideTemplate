@@ -1,18 +1,18 @@
 @charset "UTF-8";
-@use "../../../Css/foundation/function" as function;
-@use "../../../Css/foundation/mixin" as mixin;
-@use "../../../Css/foundation/variable" as variable;
+@use "../../../Css/foundation/function" as f;
+@use "../../../Css/foundation/mixin" as m;
+@use "../../../Css/foundation/variable" as v;
 
 
 /* ===============================================
   * TITLE *
 =============================================== */
-@include mixin.mqP(lg) {
+@include m.mqP(lg) {
   /* ===============================================
     * TITLE *
   =============================================== */
 }
-@include mixin.mq(lg) {
+@include m.mq(lg) {
   /* ===============================================
     * TITLE *
   =============================================== */
@@ -22,11 +22,11 @@
 .class {
 
 
-  @include mixin.mqP(lg) {
+  @include m.mqP(lg) {
 
   }
 
-  @include mixin.mq(lg) {
+  @include m.mq(lg) {
 
   }
 }

@@ -1,18 +1,18 @@
 @charset "UTF-8";
-@use "../../../Css/foundation/function" as function;
-@use "../../../Css/foundation/mixin" as mixin;
-@use "../../../Css/foundation/variable" as variable;
+@use "../../../Css/foundation/function" as f;
+@use "../../../Css/foundation/mixin" as m;
+@use "../../../Css/foundation/variable" as v;
 
 
 /* ===============================================
   * Page Index *
 =============================================== */
-@include mixin.mqP(lg) {
+@include m.mqP(lg) {
   /* ===============================================
     * Page Index *
   =============================================== */
 }
-@include mixin.mq(lg) {
+@include m.mq(lg) {
   /* ===============================================
     * Page Index *
   =============================================== */
@@ -22,7 +22,7 @@
 .page-index {
   display: none;
 
-  @include mixin.mq(lg) {
+  @include m.mq(lg) {
     width: 15%;
 
     &.current {
@@ -65,7 +65,7 @@
 
 .page-index__list {
   &:not(.page-index__list--child) {
-    @include mixin.mq(lg) {
+    @include m.mq(lg) {
       position: sticky;
       // top: var(--spacer-vertical-medium);
       top: calc(var(--pageTitle-height) + var(--spacer-vertical-medium));
@@ -76,7 +76,7 @@
       // box-shadow: -4px 6px 10px var(--color-light-grey);
       overflow: hidden;
 
-      @include mixin.theme(dark) {
+      @include m.theme(dark) {
         border-color: var(--color-dark-grey);
         color: var(--color-white);
       }
@@ -104,12 +104,12 @@
 
     &[data-index="inactive"] {
       .page-index__list-item__link {
-        @include mixin.hover {
+        @include m.hover {
           background-color: var(--color-grey-lighter);
         }
       }
 
-      @include mixin.mqP(lg) {
+      @include m.mqP(lg) {
         display: none;
       }
     }

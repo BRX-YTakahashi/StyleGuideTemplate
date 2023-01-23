@@ -1,18 +1,18 @@
 @charset "UTF-8";
-@use "../../../Css/foundation/function" as function;
-@use "../../../Css/foundation/mixin" as mixin;
-@use "../../../Css/foundation/variable" as variable;
+@use "../../../Css/foundation/function" as f;
+@use "../../../Css/foundation/mixin" as m;
+@use "../../../Css/foundation/variable" as v;
 
 
 /* ===============================================
   * category-tab *
 =============================================== */
-@include mixin.mqP(lg) {
+@include m.mqP(lg) {
   /* ===============================================
     * category-tab *
   =============================================== */
 }
-@include mixin.mq(lg) {
+@include m.mq(lg) {
   /* ===============================================
     * category-tab *
   =============================================== */
@@ -34,7 +34,7 @@
     border-radius: 50%;
     // transform: translateY(2vh);
 
-    // @include mixin.theme(light) {
+    // @include m.theme(light) {
     //   background-color: var(--color-white);
     // }
   }
@@ -57,7 +57,7 @@
     width: 4vh;
     border-radius: 50%;
 
-    // @include mixin.theme(light) {
+    // @include m.theme(light) {
     //   background-color: var(--color-white);
     // }
   }
@@ -108,11 +108,11 @@
   transition-duration: var(--transitionDuration-default);
   transition-timing-function: var(--transitionTimingFunction-default);
 
-  @include mixin.theme(dark) {
+  @include m.theme(dark) {
     background: var(--color-bg-moreLighter);
   }
 
-  @include mixin.mqP(lg) {
+  @include m.mqP(lg) {
     bottom: 4vh;
 
     width: 95%;
@@ -121,7 +121,7 @@
     font-size: 1.2rem;
   }
 
-  @include mixin.mq(lg) {
+  @include m.mq(lg) {
     bottom: 5vh;
 
     width: 80%;
@@ -133,7 +133,7 @@
   &-item {
     user-select: none;
 
-    // @include mixin.theme(dark) {
+    // @include m.theme(dark) {
     //   background: var(--color-bg-moreLighter);
     // }
   }
@@ -162,15 +162,15 @@
       transform var(--transitionDuration-default) var(--transitionTimingFunction-default),
       width var(--transitionDuration-default) var(--transitionTimingFunction-default) 1.5s;
 
-    @include mixin.theme(dark) {
+    @include m.theme(dark) {
       color: var(--color-white);
     }
 
-    @include mixin.mqP(lg) {
+    @include m.mqP(lg) {
       border-radius: 1.5rem;
     }
 
-    @include mixin.mq(lg) {
+    @include m.mq(lg) {
       border-radius: 4rem;
     }
 
@@ -199,14 +199,14 @@
         width: 100%;
       }
 
-      @include mixin.mqP(lg) {
+      @include m.mqP(lg) {
         &:active {
           border-color: transparent !important;
         }
       }
 
-      @include mixin.mq(lg) {
-        @include mixin.hover {
+      @include m.mq(lg) {
+        @include m.hover {
           border-color: transparent !important;
         }
       }
@@ -217,14 +217,14 @@
         background: var(--color-category-welcome);
       }
 
-      @include mixin.mqP(lg) {
+      @include m.mqP(lg) {
         &:active {
           border-color: var(--color-category-welcome);
         }
       }
 
-      @include mixin.mq(lg) {
-        @include mixin.hover {
+      @include m.mq(lg) {
+        @include m.hover {
           border-color: var(--color-category-welcome);
         }
       }
@@ -239,14 +239,14 @@
         background: var(--color-category-rule);
       }
 
-      @include mixin.mqP(lg) {
+      @include m.mqP(lg) {
         &:active {
           border-color: var(--color-category-rule);
         }
       }
 
-      @include mixin.mq(lg) {
-        @include mixin.hover {
+      @include m.mq(lg) {
+        @include m.hover {
           border-color: var(--color-category-rule);
         }
       }
@@ -261,14 +261,14 @@
         background: var(--color-category-design);
       }
 
-      @include mixin.mqP(lg) {
+      @include m.mqP(lg) {
         &:active {
           border-color: var(--color-category-design);
         }
       }
 
-      @include mixin.mq(lg) {
-        @include mixin.hover {
+      @include m.mq(lg) {
+        @include m.hover {
           border-color: var(--color-category-design);
         }
       }
@@ -283,14 +283,14 @@
         background: var(--color-category-code);
       }
 
-      @include mixin.mqP(lg) {
+      @include m.mqP(lg) {
         &:active {
           border-color: var(--color-category-code);
         }
       }
 
-      @include mixin.mq(lg) {
-        @include mixin.hover {
+      @include m.mq(lg) {
+        @include m.hover {
           border-color: var(--color-category-code);
         }
       }
@@ -325,7 +325,7 @@
       visibility var(--transitionDuration-default) var(--transitionTimingFunction-default) 1.5s,
       width var(--transitionDuration-default) var(--transitionTimingFunction-default) 2s;
 
-    @include mixin.theme(dark) {
+    @include m.theme(dark) {
       svg path {
         fill: var(--color-white);
       }
@@ -333,13 +333,13 @@
   }
 
   &[data-state-category-tab="shrinked"] {
-    @include mixin.mq(lg) {
+    @include m.mq(lg) {
       // animation:
       //   1s ease-in-out forwards categoryTabAnimation .5s,
       //   .5s ease forwards moveBottom 2.75s;
       animation: 1s ease-in-out forwards categoryTabAnimation .5s;
 
-      @include mixin.hover {
+      @include m.hover {
         transform: scale(1.2);
       }
 
@@ -360,7 +360,7 @@
   }
 
   &[data-state-category-tab="expanded"] {
-    @include mixin.mq(lg) {
+    @include m.mq(lg) {
       animation: .5s linear forwards categoryTabAnimation_reverse;
 
       .category-tab__list-item:not(.category-tab__list-item--expand) {

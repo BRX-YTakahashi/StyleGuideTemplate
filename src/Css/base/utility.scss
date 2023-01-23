@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@use "../foundation/variable" as variable;
+@use "../foundation/variable" as v;
 
 /*
  * レスポンシブユーティリティ
@@ -36,7 +36,7 @@
 }
 
 
-@media (min-width: variable.$screenSize_Medium) {
+@media (min-width: v.$screenSize_Medium) {
   /*
    * レスポンシブユーティリティ
    */
@@ -73,7 +73,7 @@
 }
 
 
-@media (min-width: variable.$screenSize_XLarge) {
+@media (min-width: v.$screenSize_XLarge) {
   /*
    * レスポンシブユーティリティ
    */

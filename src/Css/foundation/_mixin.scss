@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@use "variable" as variable;
+@use "variable" as v;
 
 
 // * color theme *
@@ -12,14 +12,14 @@
 // * Media query *
 // mobile first
 @mixin mq($breakpoint: md) {
-  @media #{map-get(variable.$breakpoints-up, $breakpoint)} {
+  @media #{map-get(v.$breakpoints-up, $breakpoint)} {
     @content;
   }
 }
 
 // desktop first
 @mixin mqP($breakpoint: md) {
-  @media #{map-get(variable.$breakpoints-down, $breakpoint)} {
+  @media #{map-get(v.$breakpoints-down, $breakpoint)} {
     @content;
   }
 }
