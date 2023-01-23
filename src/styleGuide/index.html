@@ -95,6 +95,10 @@
       opacity: 0;
       visibility: hidden;
     }
+
+    .svg-definition__area {
+      display: none;
+    }
   </style>
 
 
@@ -116,12 +120,18 @@
 
 
 <body>
+{{> module/svg}}
+
+
+<!-- ===============================================
+  * Header *
+=============================================== -->
 {{> module/header}}
 
 
 <main class="main-area">
 
-  <h1 class="page-title"><span class="page-title__inner">Style Guide Template</span></h1>
+  <!-- <h1 class="page-title"><span class="page-title__inner">Style Guide Template</span></h1> -->
 
 
   <article class="article-wrapper current" data-category="welcome">
@@ -169,6 +179,9 @@
 </main>
 
 
+<!-- ===============================================
+  * Footer *
+=============================================== -->
 {{> module/footer}}
 
 

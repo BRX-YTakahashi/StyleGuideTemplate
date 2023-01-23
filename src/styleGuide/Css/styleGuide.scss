@@ -5,15 +5,17 @@
 @use "./foundation/base";
 
 /* component */
-@use "./component/index";
-@use "./component/categorytab";
-@use "./component/code";
-@use "./component/toast";
-@use "./component/modal";
-@use "./component/documentReader";
-@use "./component/markdown";
-@use "./component/button";
-@use "./component/colortile";
+@use "./components/header";
+@use "./components/footer";
+@use "./components/pageIndex";
+@use "./components/categorytab";
+@use "./components/code";
+@use "./components/toast";
+@use "./components/modal";
+@use "./components/documentReader";
+@use "./components/markdown";
+@use "./components/button";
+@use "./components/colortile";
 
 /* each section's style */
 @use "./page/caution";
