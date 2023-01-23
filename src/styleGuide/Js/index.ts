@@ -3,6 +3,10 @@
  */
 
 
+// import plugin
+import 'typed-query-selector';
+
+
 // import ES modules
 import * as globalVar from '../../../public/Js/modules/m_global_variable';
 import { bodyFixedOn, disableModal } from '../../../public/Js/modules/m_fixed_body';
