@@ -136,7 +136,7 @@ function initializeState(elm_array: any[] | NodeListOf<HTMLInputElement>) {
 /**
  * @type {NodeList} 全てのコピーボタン
  */
-const copyTargetElm = document.querySelectorAll<HTMLInputElement>(".code");
+const copyTargetElm = document.querySelectorAll<HTMLInputElement>(".js-copyButton");
 
 /**
  * @type {object} コピーボタン押下後に表示するトースト
@@ -188,11 +188,19 @@ copyTargetElm.forEach((elm) => {
   elm.addEventListener('click', function () {
     clearSetTimeout();
 
-    copyText(this);
+
+    if (!(this instanceof HTMLElement)) {
+      return;
+    }
+    const thisElm: HTMLElement = this;
+
+    const copyTarget = thisElm.querySelector(".js-copyTarget") as HTMLElement; // FIXME
+
+    copyText(copyTarget);
 
     if (toastElm) {
       toastElm.setAttribute('data-state-toast', 'active');
-      toastElm.innerText = elm.innerText + ' をコピーしました';
+      toastElm.innerText = copyTarget.innerText + ' をコピーしました';
     }
 
     startSetTimeout();
@@ -385,8 +393,8 @@ const categoryTabContentElm = document.querySelectorAll<HTMLInputElement>(".cate
 /** @type {NodeList} 目次の表示内容や構造を管理するための構造 */
 let pageIndexElm = document.querySelectorAll<HTMLInputElement>(".page-index");
 
-/** @type {number} スクロール量 */
-let scrollTotal = globalVar.rootElm && (globalVar.rootElm.scrollHeight - globalVar.rootElm.clientHeight);
+// /** @type {number} スクロール量 */
+// let scrollTotal = globalVar.rootElm && (globalVar.rootElm.scrollHeight - globalVar.rootElm.clientHeight);
 
 /** @type {element} カテゴリータブを拡大するボタン */
 const categoryTabExpandBtn = document.querySelector<HTMLElement>(".category-tab__list-item--expand");
@@ -438,22 +446,22 @@ categoryTabContentElm.forEach((e) => {
   }
 });
 
-/**
- * スクロールに応じてカテゴリータブの状態を変化させる
- */
-const changeStateWithScroll = function () {
-  scrollTotal = globalVar.rootElm && (globalVar.rootElm.scrollHeight - globalVar.rootElm.clientHeight);
+// /**
+//  * スクロールに応じてカテゴリータブの状態を変化させる
+//  */
+// const changeStateWithScroll = function () {
+//   scrollTotal = globalVar.rootElm && (globalVar.rootElm.scrollHeight - globalVar.rootElm.clientHeight);
 
-  if (globalVar.rootElm && scrollTotal && categoryTabElm) {
-    if ((globalVar.rootElm.scrollTop / scrollTotal) > 0.1) {
-      categoryTabElm.setAttribute('data-state-category-tab', 'shrinked');
-    } else if (!categoryTabElm.getAttribute('data-state-category-tab')) {
-      return
-    } else {
-      categoryTabElm.setAttribute('data-state-category-tab', 'expanded');
-    }
-  }
-}
+//   if (globalVar.rootElm && scrollTotal && categoryTabElm) {
+//     if ((globalVar.rootElm.scrollTop / scrollTotal) > 0.1) {
+//       categoryTabElm.setAttribute('data-state-category-tab', 'shrinked');
+//     } else if (!categoryTabElm.getAttribute('data-state-category-tab')) {
+//       return
+//     } else {
+//       categoryTabElm.setAttribute('data-state-category-tab', 'expanded');
+//     }
+//   }
+// }
 
 // if (categoryTabElm) {
 //   document.addEventListener('scroll', changeStateWithScroll);

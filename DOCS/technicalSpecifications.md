@@ -100,7 +100,7 @@ font-family  : src/styleGuide/Js/components/wc_copyFontFamily.js
 
     ```text
     value :  variable.css に登録したCSS変数の名前。"--"は抜いて登録してください。
-    font  :  div.color-tile--colorsample のフォントの色。`black`か`white`で指定してください。
+    font  :  div.color-tile--color-sample のフォントの色。`black`か`white`で指定してください。
     ```
 
 ##### 具体例__color
@@ -125,11 +125,11 @@ HTML
 
 ```html
 <copy-color value="color-error" font="white">
-  <div class="color-tile--colorsample" style="background-color: #e25858;color:#fff">
+  <div class="color-tile--color-sample" style="background-color: #e25858;color:#fff">
     #e25858
   </div>
 
-  <div class="color-tile--colorname">
+  <div class="color-tile--color-name">
     color-error
     <button class="code" type="button">
       var(--color-error)
