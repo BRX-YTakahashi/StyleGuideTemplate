@@ -115,17 +115,6 @@ ryuseilight.apply('.code-preview--ts', {
   * 汎用 *
 =============================================== */
 
-// /**
-//  * クリックした要素を返す.
-//  *
-//  * @param {object} e クリックした要素
-//  */
-// function returnClickElm(e) {
-//   console.log(e)
-//   return e
-// }
-
-
 /**
  * 対象要素の状態を全てリセットする.
  *
@@ -466,9 +455,9 @@ const changeStateWithScroll = function () {
   }
 }
 
-if (categoryTabElm) {
-  document.addEventListener('scroll', changeStateWithScroll);
-}
+// if (categoryTabElm) {
+//   document.addEventListener('scroll', changeStateWithScroll);
+// }
 
 if (categoryTabExpandBtn && categoryTabElm) {
   categoryTabExpandBtn.addEventListener('click', function () {
