@@ -188,17 +188,24 @@ copyTargetElm.forEach((elm) => {
   elm.addEventListener('click', function () {
     clearSetTimeout();
 
-
+    // type assertion
     if (!(this instanceof HTMLElement)) {
       return;
     }
+
+    /** @type {HTMLElement} thisElm クリックした要素 */
     const thisElm: HTMLElement = this;
 
-    const copyTarget = thisElm.querySelector(".js-copyTarget") as HTMLElement; // FIXME
+    /** @type {HTMLElement} copyTarget コピーする対象の要素 */
+    const copyTarget = thisElm.querySelector(".js-copyTarget");
 
-    copyText(copyTarget);
+    // type assertion
+    if (!(copyTarget instanceof HTMLElement)) {
+      return;
+    }
 
-    if (toastElm) {
+    if (toastElm && copyTarget) {
+      copyText(copyTarget);
       toastElm.setAttribute('data-state-toast', 'active');
       toastElm.innerText = copyTarget.innerText + ' をコピーしました';
     }
@@ -499,12 +506,16 @@ if (modeVal) {
   * マークダウンの内容を出力する処理 *
 =============================================== */
 
+interface documentElms {
+  [key: string]: string
+}
+
 /**
  * @type {any} documentElms
  *
  * data-doc-detailで指定した値とimportした.mdを紐付ける
  */
-const documentElms: any = { // FIXME
+const documentElms: documentElms = {
   summary: summary,
 }
 
@@ -541,6 +552,7 @@ outputArea.forEach(e => {
           }
         }
       }
+
     } else if (attributeVal.includes('github')) {
       // GitHubにアップしている.mdファイルを読み込むときの処理
 
