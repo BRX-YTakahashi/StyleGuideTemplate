@@ -648,7 +648,7 @@ docsName.forEach(e => {
     const readerElm = document.querySelector<HTMLElement>(".document-reader");
 
     if (readerElm) {
-      if (globalVar.screenWidth <= globalVar.MOBILE_SCREEN_WIDTH) {
+      if (globalVar.screenWidthDoc <= globalVar.MOBILE_SCREEN_WIDTH) {
         readerElm.setAttribute('data-state-reader', 'shrinked')
 
         scrollToTop_smooth(readerElm);
