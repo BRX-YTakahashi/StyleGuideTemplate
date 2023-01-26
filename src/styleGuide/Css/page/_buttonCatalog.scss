@@ -1,0 +1,62 @@
+@charset "UTF-8";
+@use "../../../Css/foundation/function" as f;
+@use "../../../Css/foundation/mixin" as m;
+@use "../../../Css/foundation/variable" as v;
+
+/* ===============================================
+  * Button Catalog *
+=============================================== */
+@include m.mqP(lg) {
+  /* ===============================================
+    * Button Catalog *
+  =============================================== */
+}
+@include m.mq(lg) {
+  /* ===============================================
+    * Button Catalog *
+  =============================================== */
+}
+
+
+
+
+.button-catalog {
+  &__list {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: var(--spacer-vertical-small);
+
+    width: 100%;
+    margin-right: auto;
+    margin-bottom: var(--spacer-vertical-medium);
+    margin-left: auto;
+    padding: 0 var(--spacer-vertical-xsmall);
+
+    @include m.mqP(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include m.mq(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+
+  &__detail {
+    &-container {
+      margin-top: var(--spacer-vertical-xsmall);
+
+      .code {
+        margin-top: calc(var(--spacer-vertical-xsmall) / 2);
+      }
+    }
+
+    &-text {
+      .annotation--s {
+        display: block;
+        margin-top: .5ch;
+        margin-left: 0;
+      }
+    }
+  }
+}

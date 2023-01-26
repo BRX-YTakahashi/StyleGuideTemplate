@@ -1,0 +1,144 @@
+@charset "UTF-8";
+@use "../foundation/function" as f;
+@use "../foundation/mixin" as m;
+@use "../foundation/variable" as v;
+
+
+/* ===============================================
+  * BUTTON *
+=============================================== */
+@include m.mqP(lg) {
+  /* ===============================================
+    * BUTTON *
+  =============================================== */
+}
+@include m.mq(lg) {
+  /* ===============================================
+    * BUTTON *
+  =============================================== */
+}
+
+
+
+.c-button {
+  &__frame {
+    --width: auto;
+    --max-width: 80%;
+    --height: auto;
+    --max-height: none;
+    --aspect-ratio: 8 / 3;
+    --padding-horizontal: 10%;
+    --padding-vertical: 0;
+    --border-radius: 10px;
+
+    display: grid;
+    place-content: center;
+
+    // MEMO: min()関数にまとめるとデフォ値のautoが弾かれてしまうので、max-XXは分離させています。
+    width: var(--width);
+    max-width: var(--max-width);
+    height: var(--height);
+    max-height: var(--max-height);
+    aspect-ratio: var(--aspect-ratio);
+
+    background-color: var(--color-background);
+    padding: var(--padding-vertical) var(--padding-horizontal);
+    border: solid 1px var(--color-background);
+    border-radius: var(--border-radius);
+
+    color: var(--color-font);
+    line-height: 1.5;
+
+    transition:
+      background var(--transitionDuration-fast) var(--transitionTimingFunction-default),
+      border var(--transitionDuration-default) var(--transitionTimingFunction-default),
+      box-shadow var(--transitionDuration-default) var(--transitionTimingFunction-default),
+      opacity var(--transitionDuration-default) var(--transitionTimingFunction-default);
+
+    cursor: pointer;
+    user-select: none;
+
+
+    &:disabled {
+      pointer-events: none;
+      filter: opacity(.4);
+    }
+  }
+
+  &__skin {
+    &--main {
+      --color-background: var(--color-main);
+      --color-font: var(--color-white);
+    }
+
+    &--sub-1 {
+      --color-background: var(--color-brand-sub1);
+      --color-font: var(--color-white);
+    }
+
+    &--blue {
+      --color-background: var(--color-category-code);
+      --color-font: var(--color-white);
+    }
+  }
+
+  &__animation {
+    &--transparent {
+      @include m.hover {
+        --color-font: var(--color-background);
+
+        background-color: transparent;
+      }
+    }
+
+    // MEMO: ボツ
+    // &--invert {
+    //   position: relative;
+
+    //   background: none;
+    //   border: none;
+    //   overflow: hidden;
+
+    //   &::after {
+    //     content: "";
+
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     // z-index: -1;
+
+    //     width: 100%;
+    //     height: 100%;
+    //     background: var(--color-background);
+
+    //     transition: filter var(--transitionDuration-fast) var(--transitionTimingFunction-default);
+    //   }
+
+    //   @include m.hover {
+    //     &::after {
+    //       filter: invert(1);
+    //     }
+    //   }
+    // }
+
+    &--shadow {
+      &-4 {
+        @include m.hover {
+          box-shadow: var(--elevation-4);
+        }
+      }
+
+      &-6 {
+        @include m.hover {
+          box-shadow: var(--elevation-6);
+        }
+      }
+
+      &-8 {
+        @include m.hover {
+          box-shadow: var(--elevation-8);
+        }
+      }
+    }
+  }
+}
