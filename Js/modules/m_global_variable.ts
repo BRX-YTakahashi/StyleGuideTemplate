@@ -22,20 +22,34 @@ export let rootElm = document.querySelector<HTMLElement>("html");
 export let bodyElm = document.querySelector<HTMLElement>("body");
 
 /**
- * 画面幅(ビューポート).
+ * 画面幅 (document).
  *
  * @type {number}
  * @function refreshWindowSize
  */
-export let screenWidth: number = window.innerWidth;
+export let screenWidthDoc: number = document.documentElement.clientWidth;
 
 /**
- * 画面高(ビューポート).
+ * 画面幅 (viewport).
+ *
+ * @type {number}
+ */
+export let screenWidthView: number = window.innerWidth;
+
+/**
+ * 画面高 (document).
  *
  * @type {number}
  * @function refreshWindowSize
  */
-export let screenHeight: number = window.innerHeight;
+export let screenHeightDoc: number = document.documentElement.clientHeight;
+
+/**
+ * 画面高 (viewport).
+ *
+ * @type {number}
+ */
+export let screenHeightView: number = window.innerHeight;
 
 /** モバイルデバイスを判定する画面幅 */
 export const MOBILE_SCREEN_WIDTH = 768;
@@ -85,13 +99,13 @@ export const defaultAnimationSpeed: number = getComputedStyle(document.documentE
 
 /** 画面幅の値を再代入する */
 function reassignmentWindowSize() {
-  screenWidth = window.innerWidth;
-  screenHeight = window.innerHeight;
+  screenWidthDoc = window.innerWidth;
+  screenHeightDoc = window.innerHeight;
 }
 
 /** resizeイベント発火時、画面幅が異なる時に値を再代入する */
 function refreshWindowSize() {
-  screenWidth !== window.innerWidth && reassignmentWindowSize();
+  screenWidthDoc !== window.innerWidth && reassignmentWindowSize();
 }
 
 window.onresize = refreshWindowSize;
