@@ -1,4 +1,17 @@
 <div class="main-content" data-category="code">
+
+  <!-- ボタン -->
+  <section class="section-style section-style--button js-intersectTarget" id="buttonCatalog" data-indexname="ボタン一覧">
+    <h2 class="title__text">ボタン一覧</h2>
+
+    <p class="description__text">ソースコードは src/Css/component/button.scss を参照してください</p>
+
+    <div class="content__wrapper">
+      {{> atomic/atomic_button}}
+    </div>
+  </section>
+
+
   <!-- コードハイライター使用例 -->
   <section class="section-style section-style--hightlight-sample js-intersectTarget" id="hightlightSample" data-indexname="コードハイライター使用例">
     <h2 class="title__text">コードハイライター 使用例</h2>
@@ -257,186 +270,4 @@
     </div>
   </section>
 
-
-  <section class="section-style section-style--codingrule js-intersectTarget" id="codingRule_CODE_1" data-indexname="Web Components_0">
-    <h2 class="title__text">Web Components学習用エリア_0</h2>
-
-    <hello-world></hello-world><br>
-    <hello-world name="Viewer"></hello-world><br>
-
-    <div class="content__wrapper">
-      <pre class="code-preview code-preview--js">
-        /* ===============================================
-          * 練習0: Hello World *
-        =============================================== */
-        class HelloWorld extends HTMLElement {
-          // connectedCallback() {
-          //   this.textContent = 'Hello World!';
-          // }
-
-          // 各オブジェクト作成時(= コンポーネント初期化時)に実行される。
-          // デフォルトの設定や、その他のプリレンダリング処理を行う。
-          constructor() {
-            super();
-            this.name = 'World';//属性が存在しない時の値
-          }
-
-          // 監視する属性名のプロパティの配列を返す
-          static get observedAttributes() {
-            return ['name'];
-          }
-
-          // 属性が定義された時や変更された時に呼び出される。
-          attributeChangedCallback(property, oldValue, newValue) {
-            if (oldValue === newValue) return;
-            this[property] = newValue;
-          }
-
-          // Web ComponentがDOMに追加された時に呼び出され、必要なレンダリングをすべて実行する
-          connectedCallback() {
-            this.textContent = `Hello ${this.name}`;
-          }
-        }
-
-        customElements.define('hello-world', HelloWorld);
-      </pre>
-    </div>
-  </section>
-
-
-  <section class="section-style section-style--codingrule js-intersectTarget" id="codingRule_CODE_2" data-indexname="Web Components_1">
-    <h2 class="title__text">Web Components学習用エリア_1</h2>
-
-    <simple-clock></simple-clock><br>
-
-    <div class="content__wrapper">
-      <pre class="code-preview code-preview--js">
-        /* ===============================================
-          * 練習1: 現在時刻の表示 *
-        =============================================== */
-        class SimpleClock extends HTMLElement {
-          constructor() {
-            super();//親クラスのコンストラクターを参照するため、必須。
-
-            // Create Shadow DOM
-            this.shadow = this.attachShadow({
-              mode: 'open'//shadow rootの外側から操作できるようになる
-            });
-
-            // create h1 element displays current time under the shadow DOM
-            const now = new Date();
-            const clockElement = document.createElement('h1');
-            clockElement.textContent = `Current time is ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
-            this.shadow.append(clockElement);
-          }
-        }
-
-        // 即時関数
-        (function main() {
-          // defined SimpleClock class named simple-clock
-          customElements.define("simple-clock", SimpleClock);
-        })();
-      </pre>
-    </div>
-  </section>
-
-
-  <section class="section-style section-style--codingrule js-intersectTarget" id="codingRule_CODE_3" data-indexname="Web Components_2">
-    <h2 class="title__text">Web Components学習用エリア_2</h2>
-
-    <copy-color value="color-error" font="white"></copy-color>
-
-    <copy-color value="color-test" font="white"></copy-color>
-
-    <div class="content__wrapper">
-      <pre class="code-preview code-preview--js">
-        /**
-          * カラーチップを生成するためのWebComponents
-          */
-        class CopyColorVal extends HTMLElement {
-          constructor() {
-            super();
-            this.value = 'EMPTY';
-            this.font = '#000';
-          }
-
-          static get observedAttributes() {
-            return ['value', 'font'];
-          }
-
-          attributeChangedCallback(property, oldValue, newValue) {
-            if (oldValue === newValue) return;
-            this[property] = newValue;
-          }
-
-          connectedCallback() {
-            /**
-              * 変数が見つからない時に表示する文字.
-              *
-              *  @type {string} errorTxt
-              */
-            const errorTxt = "NOT FOUND";
-
-            /**
-              * CSS変数の名前.
-              *
-              *  @type {string} customPropName
-              */
-            let customPropName = this.value;
-
-            /**
-              * CSS変数の値.
-              *
-              * @type {string} customPropVal
-              */
-            let customPropVal = getComputedStyle(document.documentElement).getPropertyValue(`--${this.value}`);
-
-            /**
-              * フロントに表示するCSS変数の値を処理.
-              *
-              * valueで設定したCSS変数が存在するか否かで対応する値を代入する.
-              *
-              * @type {string} displayPropVal
-              */
-            let displayPropVal = !(customPropVal) ? errorTxt : customPropVal;
-
-            /**
-              * コピーするテキスト.
-              *
-              *  @type {string} copyVal
-              */
-            let copyVal = (displayPropVal === errorTxt) ? "値を確認してください" : `var(--${customPropName})`;
-
-            /**
-              * カラーチップのフォントの色.
-              *
-              *  @type {string} fontColor
-              */
-            let fontColor = (this.font === "white") ? '#fff' : '#000';
-
-            // const shadow = this.attachShadow({mode: 'open'});
-
-            // shadow.innerHTML = `
-            this.innerHTML = `
-              &lt;div class="color-tile--color-sample" style="background-color:${customPropVal};color:${fontColor}"&gt;
-                ${displayPropVal}
-              &lt;/div&gt;
-
-              &lt;div class="color-tile--color-name"&gt;
-                ${customPropName}
-                &lt;button class="code" type="button"&gt;
-                  ${copyVal}
-                  &lt;svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="copy" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"&gt;&lt;path fill="currentColor" d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"&gt;&lt;/path&gt;&lt;/svg&gt;
-                &lt;/button&gt;
-              &lt;/div&gt;
-            `;
-
-            (displayPropVal === errorTxt) && this.setAttribute('error', 'true');
-          }
-        }
-
-        customElements.define('copy-color', CopyColorVal);
-      </pre>
-    </div>
-  </section>
 </div>
