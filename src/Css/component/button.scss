@@ -57,9 +57,9 @@
 
     transition:
       background var(--transitionDuration-fast) var(--transitionTimingFunction-default),
-      border var(--transitionDuration-default) var(--transitionTimingFunction-default),
-      box-shadow var(--transitionDuration-default) var(--transitionTimingFunction-default),
-      opacity var(--transitionDuration-default) var(--transitionTimingFunction-default);
+      border var(--transitionDuration-fast) var(--transitionTimingFunction-default),
+      box-shadow var(--transitionDuration-fast) var(--transitionTimingFunction-default),
+      opacity var(--transitionDuration-fast) var(--transitionTimingFunction-default);
 
     cursor: pointer;
     user-select: none;
@@ -120,9 +120,18 @@
   &__animation {
     &--transparent {
       @include m.hover {
-        --color-font: var(--color-background);
-
         background-color: transparent;
+
+        color: var(--color-background);
+
+
+        &:active {
+          background-color: var(--color-background);
+
+          color: var(--color-font);
+
+          filter: opacity(.6);
+        }
       }
     }
 
@@ -160,18 +169,33 @@
       &-4 {
         @include m.hover {
           box-shadow: var(--elevation-4);
+
+          &:active {
+            box-shadow: var(--elevation-8);
+            transition: none;
+          }
         }
       }
 
       &-6 {
         @include m.hover {
           box-shadow: var(--elevation-6);
+
+          &:active {
+            box-shadow: var(--elevation-12);
+            transition: none;
+          }
         }
       }
 
       &-8 {
         @include m.hover {
           box-shadow: var(--elevation-8);
+
+          &:active {
+            box-shadow: var(--elevation-16);
+            transition: none;
+          }
         }
       }
     }
