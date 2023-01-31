@@ -184,7 +184,7 @@ body {
   }
 }
 
-.link-txt {
+.link__text {
   position: relative;
   color: var(--color-primary);
   letter-spacing: 0.05em;
@@ -193,20 +193,26 @@ body {
 
   &::after {
     content: "";
+
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 0;
+    left: auto;
+
     display: inline-block;
-    height: 2px;
+
     width: 0;
+    height: 2px;
     border-bottom: solid 1px var(--color-primary);
-    transition-property: width;
-    transition-duration: var(--transitionDuration-default);
-    transition-timing-function: ease-in;
+
+    transition: width var(--transitionDuration-default) var(--transitionTimingFunction-default);
   }
 
   @include m.hover {
     &::after {
+      right: auto;
+      left: 0;
+
       width: 100%;
     }
   }
