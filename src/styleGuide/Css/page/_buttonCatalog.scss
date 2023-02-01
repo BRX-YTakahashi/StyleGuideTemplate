@@ -59,4 +59,21 @@
       }
     }
   }
+
+
+  &__preview-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 90%;
+    aspect-ratio: 1;
+    margin: auto;
+    background-color: var(--color-grey-lighter);
+    border-radius: var(--borderRadius-regular);
+
+    svg {
+      width: 80%;
+    }
+  }
 }
