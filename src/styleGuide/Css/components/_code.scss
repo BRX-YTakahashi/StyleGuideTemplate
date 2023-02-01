@@ -94,6 +94,9 @@
 
 /* style of code highlighter */
 .code-preview {
+  margin-top: var(--spacer-vertical-xsmall);
+  margin-bottom: var(--spacer-vertical-xsmall);
+
   font-family: v.$code-ff;
 
   & > * {

@@ -1,5 +1,5 @@
-{{!-- 構造 --}}
-<h3 class="title__text title__text--child">構造</h3>
+{{!-- 構造 - 基本 --}}
+<h3 class="title__text title__text--child">構造：基本</h3>
 
 <ul class="button-catalog__list">
   <li class="button-catalog__list-item">
@@ -15,30 +15,100 @@
     </div>
   </li>
 
+</ul>
+
+<p class="description__text">CSS変数を上書きすることで容易に調整できる仕様になっています。</p>
+
+<div class="content__wrapper">
+  <pre class="code-preview code-preview--css" data-rl-caption="初期値">
+    .c-button__frame {
+      --width: auto;
+      --max-width: 80%;
+      --height: auto;
+      --max-height: none;
+      --aspect-ratio: auto;
+      --padding-horizontal: 4ch;
+      --padding-vertical: 2ch;
+      --border-radius: 10px;
+      --font-size: inherit;
+      --font-family: inherit;
+    }
+  </pre>
+  <pre class="code-preview code-preview--css" data-rl-caption="調整例">
+    @media screen and (max-width: 767px) {
+      .c-button__frame {
+        --border-radius: 4rem;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      .c-button__frame {
+        --border-radius: 20px;
+      }
+    }
+  </pre>
+</div>
+
+
+{{!-- 構造 - 応用 --}}
+<h3 class="title__text title__text--child">構造：応用</h3>
+
+<ul class="button-catalog__list">
   <li class="button-catalog__list-item">
-    <button class="c-button__frame c-button__frame--icon c-button__skin--main" type="button" aria-label="PLACEHOLDERへ遷移するボタン">
+    <button class="c-button__frame c-button__frame--icon c-button__frame--icon-l c-button__skin--main" type="button" aria-label="PLACEHOLDERへ遷移するボタン">
       <svg class="c-button__icon-wrapper"><use xlink:href="#octocatWIcon"></use></svg>
       ボタンダヨー
     </button>
 
     <div class="button-catalog__detail-container">
-      <p class="button-catalog__detail-text">アイコン付き - img, svg要素</p>
+      <p class="button-catalog__detail-text">アイコン付き（左） - img, svg要素</p>
 
       <button class="code js-copyButton" type="button">
-        <span class="js-copyTarget">c-button__frame--icon</span>
+        <span class="js-copyTarget">c-button__frame--icon c-button__frame--icon-l</span>
         <svg class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"><use xlink:href="#copyIcon"></use></svg>
       </button>
     </div>
   </li>
 
   <li class="button-catalog__list-item">
-    <button class="c-button__frame c-button__frame--icon c-button__frame--icon-pseudo c-button__skin--main" type="button" aria-label="PLACEHOLDERへ遷移するボタン">ボタンダヨー</button>
+    <button class="c-button__frame c-button__frame--icon c-button__frame--icon-r c-button__skin--main" type="button" aria-label="PLACEHOLDERへ遷移するボタン">
+      ボタンダヨー
+      <svg class="c-button__icon-wrapper"><use xlink:href="#octocatWIcon"></use></svg>
+    </button>
 
     <div class="button-catalog__detail-container">
-      <p class="button-catalog__detail-text">アイコン付き - 疑似要素</p>
+      <p class="button-catalog__detail-text">アイコン付き（右） - img, svg要素</p>
 
       <button class="code js-copyButton" type="button">
-        <span class="js-copyTarget">c-button__frame--icon</span>
+        <span class="js-copyTarget">c-button__frame--icon c-button__frame--icon-r</span>
+        <svg class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"><use xlink:href="#copyIcon"></use></svg>
+      </button>
+    </div>
+  </li>
+
+  <li class="button-catalog__list-item"></li>
+
+  <li class="button-catalog__list-item">
+    <button class="c-button__frame c-button__frame--icon c-button__frame--icon-l c-button__frame--icon-pseudo c-button__skin--main" type="button" aria-label="PLACEHOLDERへ遷移するボタン">ボタンダヨー</button>
+
+    <div class="button-catalog__detail-container">
+      <p class="button-catalog__detail-text">アイコン付き（左） - 疑似要素</p>
+
+      <button class="code js-copyButton" type="button">
+        <span class="js-copyTarget">c-button__frame--icon c-button__frame--icon-l</span>
+        <svg class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"><use xlink:href="#copyIcon"></use></svg>
+      </button>
+    </div>
+  </li>
+
+  <li class="button-catalog__list-item">
+    <button class="c-button__frame c-button__frame--icon c-button__frame--icon-r c-button__frame--icon-pseudo c-button__skin--main" type="button" aria-label="PLACEHOLDERへ遷移するボタン">ボタンダヨー</button>
+
+    <div class="button-catalog__detail-container">
+      <p class="button-catalog__detail-text">アイコン付き（右） - 疑似要素</p>
+
+      <button class="code js-copyButton" type="button">
+        <span class="js-copyTarget">c-button__frame--icon c-button__frame--icon-r</span>
         <svg class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"><use xlink:href="#copyIcon"></use></svg>
       </button>
     </div>
@@ -102,10 +172,27 @@
 
 <ul class="button-catalog__list">
   <li class="button-catalog__list-item">
+    <button class="c-button__frame c-button__skin--main c-button__animation--opacity" type="button" aria-label="PLACEHOLDERへ遷移するボタン">ボタンダヨー</button>
+
+    <div class="button-catalog__detail-container">
+      <p class="button-catalog__detail-text">透過度を調整</p>
+
+      <button class="code js-copyButton" type="button">
+        <span class="js-copyTarget">c-button__animation--opacity</span>
+        <svg class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"><use xlink:href="#copyIcon"></use></svg>
+      </button>
+    </div>
+  </li>
+
+  <li class="button-catalog__list-item"></li>
+
+  <li class="button-catalog__list-item"></li>
+
+  <li class="button-catalog__list-item">
     <button class="c-button__frame c-button__skin--main c-button__animation--transparent" type="button" aria-label="PLACEHOLDERへ遷移するボタン">ボタンダヨー</button>
 
     <div class="button-catalog__detail-container">
-      <p class="button-catalog__detail-text">背景透過</p>
+      <p class="button-catalog__detail-text">背景を透過</p>
 
       <button class="code js-copyButton" type="button">
         <span class="js-copyTarget">c-button__animation--transparent</span>
@@ -118,7 +205,7 @@
     <button class="c-button__frame c-button__skin--blue c-button__animation--transparent" type="button" aria-label="PLACEHOLDERへ遷移するボタン">ボタンダヨー</button>
 
     <div class="button-catalog__detail-container">
-      <p class="button-catalog__detail-text">背景透過 応用例</p>
+      <p class="button-catalog__detail-text">背景を透過：応用例</p>
 
       <button class="code js-copyButton" type="button">
         <span class="js-copyTarget">c-button__skin--blue c-button__animation--transparent</span>
@@ -165,6 +252,66 @@
         <span class="js-copyTarget">c-button__animation--shadow-8</span>
         <svg class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"><use xlink:href="#copyIcon"></use></svg>
       </button>
+    </div>
+  </li>
+
+  <li class="button-catalog__list-item">
+    <button class="c-button__frame c-button__frame--icon c-button__frame--icon-r c-button__skin--main c-button__animation--transform" type="button" aria-label="PLACEHOLDERへ遷移するボタン">
+      ボタンダヨー
+      <svg class="c-button__icon-wrapper"><use xlink:href="#octocatWIcon"></use></svg>
+    </button>
+
+    <div class="button-catalog__detail-container">
+      <p class="button-catalog__detail-text">アイコンをちょっと動かす（左）</p>
+
+      <button class="code js-copyButton" type="button">
+        <span class="js-copyTarget">c-button__frame--icon c-button__frame--icon-r c-button__animation--transform</span>
+        <svg class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"><use xlink:href="#copyIcon"></use></svg>
+      </button>
+    </div>
+  </li>
+
+  <li class="button-catalog__list-item">
+    <button class="c-button__frame c-button__frame--icon c-button__frame--icon-l c-button__skin--main c-button__animation--transform" type="button" aria-label="PLACEHOLDERへ遷移するボタン">
+      <svg class="c-button__icon-wrapper"><use xlink:href="#octocatWIcon"></use></svg>
+      ボタンダヨー
+    </button>
+
+    <div class="button-catalog__detail-container">
+      <p class="button-catalog__detail-text">アイコンをちょっと動かす</p>
+
+      <button class="code js-copyButton" type="button">
+        <span class="js-copyTarget">c-button__frame--icon c-button__frame--icon-r c-button__animation--transform</span>
+        <svg class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"><use xlink:href="#copyIcon"></use></svg>
+      </button>
+    </div>
+  </li>
+
+  <li class="button-catalog__list-item"></li>
+
+  <li class="button-catalog__list-item">
+    <button class="c-button__frame c-button__skin--main c-button__animation--shutter" type="button" aria-label="PLACEHOLDERへ遷移するボタン">ボタンダヨー</button>
+
+    <div class="button-catalog__detail-container">
+      <p class="button-catalog__detail-text">スライド</p>
+
+      <button class="code js-copyButton" type="button">
+        <span class="js-copyTarget">c-button__animation--shutter</span>
+        <svg class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"><use xlink:href="#copyIcon"></use></svg>
+      </button>
+    </div>
+  </li>
+
+  <li class="button-catalog__list-item">
+    <button class="c-button__frame c-button__skin--main c-button__animation--shutter" style="--color-background-2nd: var(--color-primary)" type="button" aria-label="PLACEHOLDERへ遷移するボタン">ボタンダヨー</button>
+
+    <div class="button-catalog__detail-container">
+      <p class="button-catalog__detail-text">スライド：応用例<span class="annotation--s annotation--grey">--color-background-2ndを上書きすることで、色を変えることができます</span></p>
+
+      {{!-- <button class="code js-copyButton" type="button">
+        <span class="js-copyTarget">c-button__animation--shutter</span>
+        <svg class="svg-inline--fa fa-copy fa-w-14 fa-lg icon--copy"><use xlink:href="#copyIcon"></use></svg>
+      </button> --}}
     </div>
   </li>
 </ul>
