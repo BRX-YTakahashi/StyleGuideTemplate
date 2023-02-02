@@ -65,7 +65,11 @@
     letter-spacing: .1em;
 
     @include m.hover {
-      box-shadow: var(--elevation-6);
+      box-shadow: var(--elevation-4);
+
+      &:active {
+        box-shadow: var(--elevation-8);
+      }
     }
 
     @include m.mqP(lg) {
