@@ -1,6 +1,9 @@
 @charset "UTF-8";
 
 
+// TODO: ディレクトリがぐちゃぐちゃなので整理すること！！
+
+
 /* base style */
 @use "./foundation/base";
 
@@ -16,6 +19,9 @@
 @use "./components/markdown";
 @use "./components/button";
 @use "./components/colortile";
+
+/* atomic */
+@use "./components/buttonStyle";
 
 /* each section's style */
 @use "./page/caution";
