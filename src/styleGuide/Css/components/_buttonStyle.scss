@@ -94,9 +94,9 @@
 
     &--icon {
       --gap: 6.8%;
-      --width-icon: 4rem;
+      --width-icon: 5rem;
       --aspect-ratio-icon: 1;
-      --padding-icon: 1.4rem 1.2rem;
+      --padding-icon: 1.2rem;
 
       grid-template-columns: var(--width-icon) auto var(--width-icon);
       align-items: center;
@@ -120,14 +120,14 @@
       &-pseudo {
         &::before,
         &::after {
-          --background-image: var(--svg-arrow);
+          --background-image: var(--svg-octocat);
 
           width: 100%;
           aspect-ratio: var(--aspect-ratio-icon);
           padding: var(--padding-icon);
           background-position: center;
           background-repeat: no-repeat;
-          background-size: auto;
+          background-size: calc(100% - (var(--padding-icon) * 2));
         }
         &.c-button__frame--icon-l::before {
           content: "";
