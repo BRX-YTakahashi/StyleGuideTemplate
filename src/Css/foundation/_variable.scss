@@ -1,10 +1,26 @@
 @charset "UTF-8";
 
 // /* ===============================================
-//   * SCSS Variables *
+//   * Sass Variables *
 // =============================================== */
-// * Media query *
-// for default value
+
+// /*
+//   Sass用の変数を定義するファイル。
+//   変数の宣言には、基本的にこの場所の使用を推奨します。
+//
+//   ただし、JSで値を操作したい場合や、
+//   その他の理由でカスタムプロパティーを使用する場合は、
+//   public/Css/customProperty.css を使用してください。
+//  */
+
+
+
+
+// /*
+//  * Media query
+//  */
+
+// Default value
 $breakpoints: (
   "sm": "(min-width: 560px)",
   "md": "(min-width: 768px)",
@@ -13,7 +29,8 @@ $breakpoints: (
   "xxl": "(min-width: 1400px)",
 ) !default;
 
-// for min-width
+
+// min-width
 $breakpoints-up: (
   "sm": "(min-width: 560px)",
   "md": "(min-width: 768px)",
@@ -22,7 +39,8 @@ $breakpoints-up: (
   "xxl": "(min-width: 1400px)",
 ) !default;
 
-// for max-width
+
+// max-width
 $breakpoints-down: (
   "sm": "(max-width: 559px)",
   "md": "(max-width: 767px)",
@@ -31,30 +49,48 @@ $breakpoints-down: (
   "xxl": "(max-width: 1399px)",
 ) !default;
 
-// * Device Screen Width *
+
+// Device Screen Width
 $screenSize_Medium: 768px;
 $screenSize_XLarge: 1200px;
 
 
-// * bg-color *
+
+
+// /*
+//  * Color - Background
+//  */
+
 $base-bg: #fff;
 
-// * font-color *
+
+
+
+// /*
+//  * Color - Font
+//  */
+
 $base-color: #000;
 
-// * font-family *
-
-// $base-ff: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "Yu Gothic", "Open Sans", "メイリオ", sans-serif;
-// $jp-ff: "M PLUS 1p";
-$jp-ff: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo;
-$en-ff: "Roboto";
-$code-ff: "IBM Plex Mono";
-// $base-ff: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-$base-ff: $en-ff, $jp-ff, sans-serif;
-// $code-ff: $code-ff, sans-serif;
-$code-ff: $code-ff, $jp-ff, sans-serif;
 
 
+
+// /*
+//  * Font Family
+//  */
+
+$ff-jp: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo;
+$ff-en: "Roboto";
+
+$ff-base: $ff-en, $ff-jp, sans-serif;
+$ff-code: "IBM Plex Mono", $ff-jp, sans-serif;
+
+
+
+
+// /*
+//  * Spacing
+//  */
 @media #{map-get($breakpoints-down, lg)} {
   // contents spacer
   $spacer_vertical-small: 2.5vw;

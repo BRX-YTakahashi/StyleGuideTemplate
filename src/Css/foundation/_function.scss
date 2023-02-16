@@ -1,28 +1,52 @@
 @charset "UTF-8";
+
 @use "variable" as v;
 
-// * calculate line-height *
-@function calcLH($line-height, $font-size) {
-  @return $line-height / $font-size;
-}
 
-// * calculate letter-spacing *
+
+
+// /* ===============================================
+//   * Calculate *
+// =============================================== */
+
+// /*
+//  * letter-spacing
+//  */
 @function calcLS($tracking) {
   @return $tracking / 1000 * 1em;
 }
 
-// * calculate px to rem *
+
+// /*
+//  * line-height
+//  */
+@function calcLH($line-height, $font-size) {
+  @return $line-height / $font-size;
+}
+
+
+// /*
+//  * px to rem
+//  */
 @function calcRem($px) {
   // @return $px / 16px * 1rem; // font-size: 100%
   @return $px / 10px * 1rem;// font-size: 62.5%
 }
 
-// * calculate size for responsive *
-// for SP
+
+
+
+/*
+ * Responsive
+ */
+
+// Mobile
 @function cwS($width) {
-  @return calc(#{$width} * (100vw / #{v.$designWidthSP}));
+  @return calc(#{$width} * (#{100vw / #{v.$designWidthSP}}));
 }
-// for TB
+
+
+// Tablet
 @function cwT($width) {
-  @return calc(#{$width} * (100vw / #{v.$designWidthPC}));
+  @return calc(#{$width} * (#{100vw / #{v.$designWidthPC}}));
 }

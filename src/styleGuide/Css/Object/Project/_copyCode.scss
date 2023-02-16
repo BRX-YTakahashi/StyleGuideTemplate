@@ -31,7 +31,7 @@
   border-radius: var(--borderRadius-small);
   color: var(--color-primary);
   // font-family: inherit;
-  font-family: v.$code-ff;
+  font-family: v.$ff-code;
   font-size: 1.2rem;
   font-weight: var(--fontweight-m);
   // letter-spacing: 0.05em;
@@ -108,7 +108,7 @@
   margin-top: var(--spacer-vertical-xsmall);
   margin-bottom: var(--spacer-vertical-xsmall);
 
-  font-family: v.$code-ff;
+  font-family: v.$ff-code;
 
   & > * {
     border: solid 1px var(--color-grey-lighter);
