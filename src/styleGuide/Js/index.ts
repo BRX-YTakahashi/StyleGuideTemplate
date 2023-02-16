@@ -8,9 +8,9 @@ import 'typed-query-selector';
 
 
 // import ES modules
-import * as globalVar from '../../../public/Js/modules/m_global_variable';
-import { bodyFixedOn, disableModal } from '../../../public/Js/modules/m_fixed_body';
-import { scrollToTop, scrollToTop_smooth } from '../../../public/Js/modules/m_scroll_pagetop';
+import * as globalVar from './modules/m_global_variable';
+import { bodyFixedOn, disableModal } from './modules/m_fixed_body';
+import { scrollToTop, scrollToTop_smooth } from './modules/m_scroll_pagetop';
 
 // import md files for parse and transform
 import Markdoc from '@markdoc/markdoc';
@@ -22,6 +22,7 @@ import "./components/wc_copy_color";
 import "./components/wc_copy_fontfamily";
 
 // import CSS file for bundle
+import "the-new-css-reset/css/reset.css";
 import "../../Css/base/utility.scss";
 // import "../../Css/component/component.scss";
 import "../Css/styleGuide.scss";
