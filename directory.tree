@@ -38,16 +38,16 @@
 │  ├── Js
 │  └── styleGuide
 │    ├── .DS_Store
-│    ├── components
-│    │  ├── article
-│    │  │  ├── article_code.hbs
-│    │  │  ├── article_design.hbs
-│    │  │  ├── article_rule.hbs
-│    │  │  └── article_welcome.hbs
-│    │  ├── atomic
-│    │  │  ├── atomic_button.hbs
-│    │  │  └── atomic_svg.hbs
-│    │  └── module
+│    ├── Contents
+│    │  ├── Article
+│    │  │  ├── code.hbs
+│    │  │  ├── design.hbs
+│    │  │  ├── rule.hbs
+│    │  │  └── welcome.hbs
+│    │  ├── Catalog
+│    │  │  ├── button.hbs
+│    │  │  └── svg.hbs
+│    │  └── Layout
 │    │    ├── categoryTab.hbs
 │    │    ├── documentReader.hbs
 │    │    ├── footer.hbs
@@ -87,9 +87,9 @@
 │    │  │  │  └── _pageIndex.scss
 │    │  │  └── Utility
 │    │  └── styleGuide.scss
-│    ├── docs
+│    ├── Docs
 │    │  └── summary.md
-│    ├── fonts
+│    ├── Fonts
 │    │  ├── .DS_Store
 │    │  ├── ibm-plex-mono-v15-latin-regular.woff
 │    │  ├── ibm-plex-mono-v15-latin-regular.woff2
@@ -105,7 +105,7 @@
 │    │  ├── roboto-v30-latin-700.woff2
 │    │  ├── roboto-v30-latin-regular.woff
 │    │  └── roboto-v30-latin-regular.woff2
-│    ├── imgs
+│    ├── Images
 │    │  └── responsiveUtility.png
 │    ├── index.html
 │    └── Js
