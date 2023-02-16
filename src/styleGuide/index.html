@@ -123,13 +123,13 @@
 
 
 <body>
-{{> module/svg}}
+{{> Layout/svg}}
 
 
 <!-- ===============================================
   * Header *
 =============================================== -->
-{{> module/header}}
+{{> Layout/header}}
 
 
 <main class="main-area">
@@ -141,7 +141,7 @@
     <!-- ===============================================
       * 目次 *
     =============================================== -->
-    {{> module/pageIndex}}
+    {{> Layout/pageIndex}}
 
 
     <!-- ===============================================
@@ -151,25 +151,25 @@
       <!--
         contents: WELCOME
       -->
-      {{> article/article_welcome}}
+      {{> Article/welcome}}
 
 
       <!--
         contents: RULE
       -->
-      {{> article/article_rule}}
+      {{> Article/rule}}
 
 
       <!--
         contents: DESIGN
       -->
-      {{> article/article_design}}
+      {{> Article/design}}
 
 
       <!--
         contents: CODE
       -->
-      {{> article/article_code}}
+      {{> Article/code}}
     </div>
   </article>
 
@@ -177,7 +177,7 @@
   <!-- ===============================================
     * CATEGORY Switch tab *
   =============================================== -->
-  {{> module/categoryTab}}
+  {{> Layout/categoryTab}}
 
 </main>
 
@@ -185,13 +185,13 @@
 <!-- ===============================================
   * Footer *
 =============================================== -->
-{{> module/footer}}
+{{> Layout/footer}}
 
 
 <!-- ===============================================
   * Reader *
 =============================================== -->
-{{> module/documentReader}}
+{{> Layout/documentReader}}
 
 
 <!-- ===============================================

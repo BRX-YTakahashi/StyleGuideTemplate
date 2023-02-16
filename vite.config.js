@@ -34,7 +34,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 
         plugins: [
           handlebars({
-            partialDirectory: resolve(__dirname, './src', 'styleGuide/components'),
+            partialDirectory: resolve(__dirname, './src', 'styleGuide/Contents'),
             context(pagePath) {
               return pageData[pagePath];
             },
@@ -102,7 +102,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 
         plugins: [
           handlebars({
-            partialDirectory: resolve(__dirname, './src', 'styleGuide/components'),
+            partialDirectory: resolve(__dirname, './src', 'styleGuide/Contents'),
             context(pagePath) {
               return pageData[pagePath];
             },
@@ -158,7 +158,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
 
         plugins: [
           handlebars({
-            partialDirectory: resolve(__dirname, './src', 'styleGuide/components'),
+            partialDirectory: resolve(__dirname, './src', 'styleGuide/Contents'),
             context(pagePath) {
               return pageData[pagePath];
             },
