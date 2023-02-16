@@ -1,32 +1,39 @@
 @charset "UTF-8";
 
 
-// TODO: ディレクトリがぐちゃぐちゃなので整理すること！！
+/* ===============================================
+  * Foundation *
+=============================================== */
 
-
-/* base style */
 @use "./foundation/base";
+@use "../../Css/Object/Utility/utility";
 
-/* component */
-@use "./components/header";
-@use "./components/footer";
-@use "./components/pageIndex";
-@use "./components/categorytab";
-@use "./components/code";
-@use "./components/toast";
-@use "./components/modal";
-@use "./components/documentReader";
-@use "./components/markdown";
-@use "./components/button";
-@use "./components/colortile";
 
-/* atomic */
-@use "./components/buttonStyle";
+/* ===============================================
+  * Object *
+=============================================== */
 
-/* each section's style */
-@use "./page/caution";
-@use "./page/codingrule";
-@use "./page/responsive";
-@use "./page/fontfamily";
-@use "./page/mov";
-@use "./page/buttonCatalog";
+@use "./Object/Component/button";
+@use "./Object/Component/modal";
+@use "./Object/Component/toast";
+
+@use "./Object/Project/categoryTab";
+@use "./Object/Project/colorTile";
+@use "./Object/Project/copyCode";
+@use "./Object/Project/documentReader";
+@use "./Object/Project/markdown";
+@use "./Object/Project/pageIndex";
+
+
+/* ===============================================
+  * Layout *
+=============================================== */
+
+@use "./Layout/header";
+@use "./Layout/footer";
+
+@use "./Layout/caution";
+@use "./Layout/codingRule";
+@use "./Layout/responsive";
+@use "./Layout/fontFamily";
+@use "./Layout/buttonCatalog";

@@ -23,8 +23,6 @@ import "./components/wc_copy_fontfamily";
 
 // import CSS file for bundle
 import "the-new-css-reset/css/reset.css";
-import "../../Css/base/utility.scss";
-// import "../../Css/component/component.scss";
 import "../Css/styleGuide.scss";
 
 

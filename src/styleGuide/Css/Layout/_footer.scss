@@ -1,29 +1,19 @@
 @charset "UTF-8";
-@use "../../../Css/foundation/function" as f;
-@use "../../../Css/foundation/mixin" as m;
-@use "../../../Css/foundation/variable" as v;
+@use "../../../Css/Foundation/function" as f;
+@use "../../../Css/Foundation/mixin" as m;
+@use "../../../Css/Foundation/variable" as v;
 
 
 /* ===============================================
-  * MOVIE *
+  * footer *
 =============================================== */
 @include m.mqP(lg) {
   /* ===============================================
-    * MOVIE *
+    * footer *
   =============================================== */
 }
 @include m.mq(lg) {
   /* ===============================================
-    * MOVIE *
+    * footer *
   =============================================== */
-}
-
-
-.movie-wrapper {
-  & > iframe {
-    width: 100%;
-    height: fit-content;
-    padding: 2rem;
-    aspect-ratio: 1;
-  }
 }

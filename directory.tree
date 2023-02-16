@@ -4,6 +4,7 @@
 ├── .gitignore
 ├── .vscode
 │  └── settings.json
+├── directory.tree
 ├── DOCS
 │  ├── designGuideline.md
 │  └── technicalSpecifications.md
@@ -14,28 +15,26 @@
 │  ├── .DS_Store
 │  ├── apple-touch-icon.png
 │  ├── Css
-│  │  ├── base
-│  │  ├── destyle.css
-│  │  └── variables.css
+│  │  └── customProperty.css
 │  ├── favicon.ico
-│  ├── Js
-│  │  └── modules
-│  │    ├── m_fixed_body.ts
-│  │    ├── m_global_variable.ts
-│  │    └── m_scroll_pagetop.ts
 │  └── styleGuide
 ├── README.md
 ├── src
 │  ├── .DS_Store
 │  ├── Css
 │  │  ├── .DS_Store
-│  │  ├── base
-│  │  │  └── utility.scss
-│  │  ├── component
-│  │  └── foundation
-│  │    ├── _function.scss
-│  │    ├── _mixin.scss
-│  │    └── _variable.scss
+│  │  ├── Foundation
+│  │  │  ├── _function.scss
+│  │  │  ├── _mixin.scss
+│  │  │  ├── _variable.scss
+│  │  │  └── .DS_Store
+│  │  ├── Layout
+│  │  └── Object
+│  │    ├── .DS_Store
+│  │    ├── Component
+│  │    ├── Project
+│  │    └── Utility
+│  │      └── _utility.scss
 │  ├── Js
 │  └── styleGuide
 │    ├── .DS_Store
@@ -57,31 +56,36 @@
 │    │    └── svg.hbs
 │    ├── Css
 │    │  ├── _temp.scss
-│    │  ├── components
-│    │  │  ├── _button.scss
-│    │  │  ├── _buttonStyle.scss
-│    │  │  ├── _categorytab.scss
-│    │  │  ├── _code.scss
-│    │  │  ├── _colortile.scss
-│    │  │  ├── _documentReader.scss
-│    │  │  ├── _footer.scss
-│    │  │  ├── _header.scss
-│    │  │  ├── _markdown.scss
-│    │  │  ├── _modal.scss
-│    │  │  ├── _pageIndex.scss
-│    │  │  └── _toast.scss
-│    │  ├── foundation
+│    │  ├── .DS_Store
+│    │  ├── Foundation
 │    │  │  └── _base.scss
-│    │  ├── page
+│    │  ├── Layout
 │    │  │  ├── _buttonCatalog.scss
 │    │  │  ├── _caution.scss
-│    │  │  ├── _codingrule.scss
-│    │  │  ├── _fontfamily.scss
-│    │  │  ├── _mov.scss
-│    │  │  └── _responsive.scss
-│    │  ├── plugin
-│    │  │  ├── ryuseilight-kirisame.min.css
-│    │  │  └── ryuseilight-shinonome.min.css
+│    │  │  ├── _codingRule.scss
+│    │  │  ├── _fontFamily.scss
+│    │  │  ├── _footer.scss
+│    │  │  ├── _header.scss
+│    │  │  ├── _responsive.scss
+│    │  │  └── .DS_Store
+│    │  ├── Object
+│    │  │  ├── .DS_Store
+│    │  │  ├── Component
+│    │  │  │  ├── _button.scss
+│    │  │  │  ├── _modal.scss
+│    │  │  │  ├── _toast.scss
+│    │  │  │  └── .DS_Store
+│    │  │  ├── Plugin
+│    │  │  │  ├── ryuseilight-kirisame.min.css
+│    │  │  │  └── ryuseilight-shinonome.min.css
+│    │  │  ├── Project
+│    │  │  │  ├── _categoryTab.scss
+│    │  │  │  ├── _colorTile.scss
+│    │  │  │  ├── _copyCode.scss
+│    │  │  │  ├── _documentReader.scss
+│    │  │  │  ├── _markdown.scss
+│    │  │  │  └── _pageIndex.scss
+│    │  │  └── Utility
 │    │  └── styleGuide.scss
 │    ├── docs
 │    │  └── summary.md
@@ -111,6 +115,9 @@
 │      │  └── wc_practice.ts
 │      ├── index.ts
 │      └── modules
+│        ├── m_fixed_body.ts
+│        ├── m_global_variable.ts
+│        └── m_scroll_pagetop.ts
 ├── tsconfig.json
 ├── vite-env.d.ts
 └── vite.config.js
