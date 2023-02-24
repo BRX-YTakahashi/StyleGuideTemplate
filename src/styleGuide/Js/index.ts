@@ -6,11 +6,11 @@
 // import plugin
 import 'typed-query-selector';
 
-
 // import ES modules
 import * as globalVar from './modules/m_global_variable';
 import { bodyFixedOn, disableModal } from './modules/m_fixed_body';
 import { scrollToTop, scrollToTop_smooth } from './modules/m_scroll_pagetop';
+import { activateRyuseiLight } from './modules/m_plugin_ryusei';
 
 // import md files for parse and transform
 import Markdoc from '@markdoc/markdoc';
@@ -28,84 +28,11 @@ import "../Css/styleGuide.scss";
 
 
 
-
 /* ===============================================
   * プラグイン *
 =============================================== */
 
-import { RyuseiLight, Overlay, Caption, Copy, LanguageName, html, scss, css, javascript, typescript } from '@ryusei/light';
-RyuseiLight.register([html(), scss(), css(), javascript(), typescript()]);
-RyuseiLight.compose({ Overlay, Caption, LanguageName, Copy });
-
-/**
- * RyuseiLightの設定.
- */
-const ryuseilight = new RyuseiLight({
-  languageName: true,
-  copy: {
-    html: 'Copy',
-    activeHtml: 'Copied'
-  }
-});
-
-/**
- * @type {NodeList} ハイライトするコード
- */
-const codeHighlighter = document.querySelectorAll("pre.code-preview");
-
-// インデントの数を調整する処理
-codeHighlighter.forEach(e => {
-  /**
-   * @type {object} コードの内容.
-   *
-   * 改行位置で区切り済み.
-   * 文字実体参照のため、innerHTMLを使用.
-   */
-  const stringCode = e.innerHTML.split('\n');
-
-  /** @type {String} 挿入する文字列. */
-  let insertStr = '';
-
-  /** @type {Number} 1行目のインデント数. */
-  let indentCount = 0;
-
-  for (let i = 0; i < stringCode.length; i++) {
-    // 1行目のインデント数を取得
-    (i === 0) && (indentCount = (stringCode[i].split('  ').length - 1) * 2);
-
-    // 最終行には改行を付与しない
-    (i !== stringCode.length - 1) && (insertStr += `${stringCode[i].slice(indentCount)}\n`);
-  }
-
-  e.innerHTML = insertStr;
-});
-
-// 言語毎のスタイルをクラス名毎に設定する。
-ryuseilight.apply('.code-preview--html', {
-  language: 'html',
-  languageName: true,
-  copy: true,
-});
-ryuseilight.apply('.code-preview--scss', {
-  language: 'scss',
-  languageName: true,
-  copy: true,
-});
-ryuseilight.apply('.code-preview--css', {
-  language: 'css',
-  languageName: true,
-  copy: true,
-});
-ryuseilight.apply('.code-preview--js', {
-  language: 'js',
-  languageName: true,
-  copy: true,
-});
-ryuseilight.apply('.code-preview--ts', {
-  language: 'ts',
-  languageName: true,
-  copy: true,
-});
+activateRyuseiLight();
 
 
 
@@ -119,10 +46,9 @@ ryuseilight.apply('.code-preview--ts', {
  *
  * @param {NodeList} elm_array 状態を初期化したい要素の配列
  */
+// TODO: カテゴリー切り替え処理のリファクタリング時にコレも処理する！
 function initializeState(elm_array: any[] | NodeListOf<HTMLInputElement>) {
-  elm_array.forEach((e) => {
-    e.classList.remove("current");
-  });
+  elm_array.forEach(e => e.classList.remove("current"));
 }
 
 
